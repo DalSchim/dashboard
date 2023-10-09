@@ -105,7 +105,8 @@ export default {
     data() {
         return {
             activeDropdown: null,
-            isVisible: false,
+            isVisible:(window.innerWidth > 910)==true,
+
         };
 
     },
@@ -147,9 +148,6 @@ export default {
 .bouton-menu{
   display: none;
 }
-
-
-
 
 .global{
     padding: 16px;
@@ -254,6 +252,8 @@ a{
         color: white;
         text-decoration: none;
     }
+  .bouton-menu{
+    display: block;
 
   .menu-burger{
     display: block;
@@ -262,18 +262,15 @@ a{
     top: 16px;
     left: 16px;
     z-index: 100;
+    span{
+      height: 2px;
+      width: 25px;
+      background-color: orange;
+      margin-bottom: 4px;
+      display: block;
+    }
+   }
   }
-  .bouton-menu{
-    display: block;
-  }
-  .menu-burger span{
-    height: 2px;
-    width: 25px;
-    background-color: orange;
-    margin-bottom: 4px;
-    display: block;
-  }
-
   .menu-burger span:nth-child(2){
     width: 20px;
   }

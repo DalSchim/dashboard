@@ -13,7 +13,8 @@
       </div>
   </div>
 </template>
-<style>
+
+<style lang="scss">
 
 .box{
     border-radius: 8px;
@@ -38,13 +39,10 @@
 .data1 {
     grid-area: data1;
 }
-
 .data2 { grid-area: data2;
 }
-
 .data3 { grid-area: data3;
 }
-
 .graph-1 {grid-area: graph-1;
 }
 .graph2 { grid-area: graph2;
@@ -57,10 +55,6 @@
 .inf3 { grid-area: inf3;
 }
 </style>
-
-
-
-
 
 <script>
 
