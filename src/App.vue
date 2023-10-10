@@ -1,11 +1,8 @@
 <template>
-
     <div class="wrapeur">
         <nav2-component/>
         <router-view/>
     </div>
-
-
 </template>
 
 <style>

@@ -1,14 +1,9 @@
 <template>
   <!--bouton menu-->
-  <div class="bouton-menu">
-      <span class="menu-burger" @click="toggleMenu" >
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-  </div>
+  <menu-burger @toggle-menu="handleToggleMenu" ref="menuBurger"></menu-burger>
   <transition class="menu" name="menu-fade">
-    <div class="global" v-if="isVisible"  id="menu">
+    <div class="global" v-if="isVisible"  id="app">
+
        <ul>
            <svg class="logo" width="124" height="69" viewBox="0 0 124 69" fill="none" xmlns="http://www.w3.org/2000/svg">
                <g clip-path="url(#clip0_4_73)">
@@ -54,39 +49,39 @@
            <hr>
            <h3>support</h3>
            <li>
-              <dropdown-menu class="drop-a" title="Serveur SE4" :isActive="activeDropdown === 1" @toggle-dropdown="toggleDropdown(1)">
-                  <router-link class="link" to="/server">Statistiques des SE4</router-link>
-                  <router-link class="link" to="/acces-distance">Accès à distance</router-link>
-                  <router-link class="link" to="/assistance">Assistance utilisateur</router-link>
-                  <router-link class="link" to="/activation">Activer un nouveau site</router-link>
+              <dropdown-menu   class="drop-a" title="Serveur SE4" :isActive="activeDropdown === 1" @toggle-dropdown="toggleDropdown(1)">
+                  <router-link class="link" id="link" to="/server">Statistiques des SE4</router-link>
+                  <router-link class="link" id="link" to="/acces-distance">Accès à distance</router-link>
+                  <router-link class="link" id="link" to="/assistance">Assistance utilisateur</router-link>
+                  <router-link class="link" id="link" to="/activation">Activer un nouveau site</router-link>
               </dropdown-menu>
               <dropdown-menu class="drop-a"  title="PVE" :isActive="activeDropdown === 2" @toggle-dropdown="toggleDropdown(2)">
-                   <router-link class="link" to="/PVE">Stat des Pve</router-link>
-                   <router-link class="link" to="/save">État des sauvegardes</router-link>
+                   <router-link class="link" id="link" to="/PVE">Stat des Pve</router-link>
+                   <router-link class="link" id="link" to="/save">État des sauvegardes</router-link>
               </dropdown-menu>
            </li>
            <hr>
            <li>
-               <router-link class="" to="/Etat">État des liens</router-link>
-               <router-link class="" to="/cloud">Cloud</router-link>
+               <router-link class="" id="link" to="/Etat">État des liens</router-link>
+               <router-link class="" id="link" to="/cloud">Cloud</router-link>
            </li>
            <hr>
            <h3>Action</h3>
            <li>
-               <dropdown-menu class="drop-a" title="Action en masse" :isActive="activeDropdown === 3" @toggle-dropdown="toggleDropdown(3)">
-                   <router-link class="link" to="/start">allumage / Extinction</router-link>
-                   <router-link class="link" to="/deploiment">Déploiment OS</router-link>
-                   <router-link class="link" to="/screen">Fond d'écrant</router-link>
-                   <router-link class="link" to="/update">Mise à jour</router-link>
+               <dropdown-menu class="drop-a"  title="Action en masse" :isActive="activeDropdown === 3" @toggle-dropdown="toggleDropdown(3)">
+                   <router-link class="link" id="link" to="/start">allumage / Extinction</router-link>
+                   <router-link class="link" id="link" to="/deploiment">Déploiment OS</router-link>
+                   <router-link class="link" id="link" to="/screen">Fond d'écrant</router-link>
+                   <router-link class="link" id="link" to="/update">Mise à jour</router-link>
                </dropdown-menu>
                <dropdown-menu class="drop-a" title="Annuaire" :isActive="activeDropdown === 4" @toggle-dropdown="toggleDropdown(4)">
-                 <router-link class="link" to="/search">Recherche</router-link>
-                 <router-link class="link" to="/import">Imports / Exports</router-link>
+                 <router-link class="link" id="link" to="/search">Recherche</router-link>
+                 <router-link class="link" id="link" to="/import">Imports / Exports</router-link>
 
                </dropdown-menu>
                <dropdown-menu class="drop-a" title="Autorisations" :isActive="activeDropdown === 5" @toggle-dropdown="toggleDropdown(5)" >
-                  <router-link class="link" to="/cree">Créer un compte</router-link>
-                  <router-link class="link" to="/deleg">Délégation(droitt/site)</router-link>
+                  <router-link class="link" id="link" to="/cree">Créer un compte</router-link>
+                  <router-link class="link" id="link" to="/deleg">Délégation(droitt/site)</router-link>
                </dropdown-menu>
            </li>
        </ul>
@@ -96,35 +91,46 @@
 
 <script>
 import DropdownMenu from './DropComponent.vue';
+import MenuBurger from './MenuBurger.vue'
+import router from "@/router";
 
 export default {
     components: {
-        DropdownMenu,
+      'menu-burger': MenuBurger,
+      DropdownMenu,
     },
     data() {
         return {
             activeDropdown: null,
             isVisible:(window.innerWidth > 910)==true,
         };
-
     },
     created() {
+     router.beforeEach((to, from, next) => {
+        if (window.innerWidth < 910) {
+          this.isVisible = false;
+        }
+        this.$refs.menuBurger.resetIcone();
+        next();
+      });
+
       window.addEventListener('resize', () => {
         if (window.innerWidth > 910) {
           this.isVisible = true;
         } else {
           this.isVisible = false
         }
-
       });
 
     },
 
   methods: {
-        toggleMenu() {
-            this.isVisible = !this.isVisible;
+        handleToggleMenu(isActive) {
+          this.isVisible = !this.isVisible;
+          if(!isActive || !this.isVisible ){
+            this.$refs.menuBurger.resetIcone();
+          }
         },
-
         toggleDropdown(menuIndex){
             if (this.activeDropdown === menuIndex) {
                 this.activeDropdown = null;
@@ -133,15 +139,16 @@ export default {
             }
         },
     },
+
 };
+
+
 </script>
 
 
 <style scoped lang="scss">
 
-.bouton-menu{
-  display: none;
-}
+
 
 .global{
     padding: 16px;
@@ -150,6 +157,7 @@ export default {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    transform: translatex(0);
     align-items: flex-start;
     color: white;
 }
@@ -264,50 +272,10 @@ a.router-link-active{
         color: white;
         text-decoration: none;
     }
-  .bouton-menu{
-    display: block;
-
-  .menu-burger{
-    display: block;
-    cursor: pointer;
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    z-index: 101;
-    span{
-      height: 2px;
-      width: 25px;
-      background-color: orange;
-      margin-bottom: 4px;
-      display: block;
-    }
-   }
-  }
-  .menu-burger span:nth-child(2){
-    width: 20px;
-  }
-
-  .menu-burger span:nth-child(3){
-    width: 15px;
-  }
-
-  /*chage to cross */
-
-  .menu-burger.active span:nth-child(1){
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .menu-burger.active span:nth-child(2){
-    opacity: 0;
-  }
-
-  .menu-burger.active span:nth-child(3){
-    transform: rotate(-45deg) translate(7px, -8px);
-  }
 
   .menu-fade-enter-active, {
-    transforme: translateX(0);
-    transition: opacity 0.5s;
+    transforme: translateX(-300);
+
   }
 }
 
