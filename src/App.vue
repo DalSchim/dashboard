@@ -26,9 +26,6 @@
     grid-template-columns: 14rem 1fr;
 }
 
-
-
-
 *{
     padding: 0;
     margin: 0;

@@ -7,7 +7,6 @@
         <span></span>
       </span>
   </div>
-
   <transition class="menu" name="menu-fade">
     <div class="global" v-if="isVisible"  id="menu">
        <ul>
@@ -50,44 +49,44 @@
                </defs>
            </svg>
             <li>
-                <router-link to="/">Accueil</router-link>
+                <router-link to="/home">Accueil</router-link>
             </li>
            <hr>
            <h3>support</h3>
            <li>
               <dropdown-menu class="drop-a" title="Serveur SE4" :isActive="activeDropdown === 1" @toggle-dropdown="toggleDropdown(1)">
                   <router-link class="link" to="/server">Statistiques des SE4</router-link>
-                  <router-link class="link" to="">Accès à distance</router-link>
-                  <router-link class="link" to="">Assistance utilisateur</router-link>
-                  <router-link class="link" to="">Activer un nouveau site</router-link>
+                  <router-link class="link" to="/acces-distance">Accès à distance</router-link>
+                  <router-link class="link" to="/assistance">Assistance utilisateur</router-link>
+                  <router-link class="link" to="/activation">Activer un nouveau site</router-link>
               </dropdown-menu>
               <dropdown-menu class="drop-a"  title="PVE" :isActive="activeDropdown === 2" @toggle-dropdown="toggleDropdown(2)">
-                   <router-link to="/PVE">Stat des Pve</router-link>
-                   <router-link to="">État des sauvegardes</router-link>
+                   <router-link class="link" to="/PVE">Stat des Pve</router-link>
+                   <router-link class="link" to="/save">État des sauvegardes</router-link>
               </dropdown-menu>
            </li>
            <hr>
            <li>
-               <router-link to="/Etat">État des liens</router-link>
-               <router-link to="">Cloud</router-link>
+               <router-link class="" to="/Etat">État des liens</router-link>
+               <router-link class="" to="/cloud">Cloud</router-link>
            </li>
            <hr>
            <h3>Action</h3>
            <li>
                <dropdown-menu class="drop-a" title="Action en masse" :isActive="activeDropdown === 3" @toggle-dropdown="toggleDropdown(3)">
-                   <router-link class="link" to="">allumage / Extinction</router-link>
-                   <router-link class="link" to="">Déploiment OS</router-link>
-                   <router-link class="link" to="">Fond d'écrant</router-link>
-                   <router-link class="link" to="">Mise à jour</router-link>
+                   <router-link class="link" to="/start">allumage / Extinction</router-link>
+                   <router-link class="link" to="/deploiment">Déploiment OS</router-link>
+                   <router-link class="link" to="/screen">Fond d'écrant</router-link>
+                   <router-link class="link" to="/update">Mise à jour</router-link>
                </dropdown-menu>
                <dropdown-menu class="drop-a" title="Annuaire" :isActive="activeDropdown === 4" @toggle-dropdown="toggleDropdown(4)">
-                   <router-link class="link" to="">Recherche</router-link>
-                    <router-link class="link" to="">Imports / Exports</router-link>
+                 <router-link class="link" to="/search">Recherche</router-link>
+                 <router-link class="link" to="/import">Imports / Exports</router-link>
 
                </dropdown-menu>
                <dropdown-menu class="drop-a" title="Autorisations" :isActive="activeDropdown === 5" @toggle-dropdown="toggleDropdown(5)" >
-                  <router-link class="link" to="">Créer un compte</router-link>
-                  <router-link class="link" to="">Délégation(droitt/site)</router-link>
+                  <router-link class="link" to="/cree">Créer un compte</router-link>
+                  <router-link class="link" to="/deleg">Délégation(droitt/site)</router-link>
                </dropdown-menu>
            </li>
        </ul>
@@ -106,13 +105,11 @@ export default {
         return {
             activeDropdown: null,
             isVisible:(window.innerWidth > 910)==true,
-
         };
 
     },
     created() {
       window.addEventListener('resize', () => {
-
         if (window.innerWidth > 910) {
           this.isVisible = true;
         } else {
@@ -124,9 +121,6 @@ export default {
     },
 
   methods: {
-
-
-
         toggleMenu() {
             this.isVisible = !this.isVisible;
         },
@@ -196,7 +190,6 @@ li{
     text-decoration: none;
 }
 
-
 .drop-a a{
 
     font-size:14px ;
@@ -207,6 +200,25 @@ li{
 a{
     color: white;
     text-decoration: none;
+    width:length( 100%);
+    &::after{
+      position: relative;
+      content: "";
+      display: block;
+      width: 0%;
+      bottom:-4px;
+      height: 2px;
+      background-color: orange;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after{
+      width: 100%;
+    }
+}
+
+a.router-link-active{
+    color: orange;
 }
 
 
@@ -261,7 +273,7 @@ a{
     position: absolute;
     top: 16px;
     left: 16px;
-    z-index: 100;
+    z-index: 101;
     span{
       height: 2px;
       width: 25px;
@@ -297,10 +309,6 @@ a{
     transforme: translateX(0);
     transition: opacity 0.5s;
   }
-
-
-
-
 }
 
 

@@ -27,8 +27,6 @@ export default {
     },
 };
 </script>
-
-
 <style scoped>
 
 ul{
@@ -46,12 +44,10 @@ ul{
     flex-direction: column;
     display: flex;
     gap: 16px;
-}
-
-.dropdown a{
-    color: black;
 
 }
+
+
 
 .slide-fade-enter-from{
     transform: translatex(-110%);
@@ -74,6 +70,10 @@ ul{
     color: white;
     background : none;
     padding: 8px 0;
+   &:hover, router-link-active{
+     cursor: pointer;
+     color: orange;
+   }
 }
 
 
