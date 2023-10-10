@@ -45,7 +45,7 @@
 @media screen and (max-width: 910px) {
     .container {
       padding: 64px;
-      height:auto ;
+      height: 100VH;
       display: grid;
       grid-auto-columns: 1fr;
       grid-auto-rows: 1fr;
