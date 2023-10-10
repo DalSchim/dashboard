@@ -50,7 +50,7 @@
       grid-auto-columns: 1fr;
       grid-auto-rows: 1fr;
       grid-template-columns: 1fr 1fr ;
-      grid-template-rows: 0.5fr 1fr 1fr ;
+      grid-template-rows: 0.5fr 0.5fr 1fr ;
       gap: 32px 16px;
       grid-template-areas:
         "inf1 inf2"
