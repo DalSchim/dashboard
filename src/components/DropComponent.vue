@@ -72,7 +72,7 @@ ul{
     padding: 8px 0;
    &:hover, router-link-active{
      cursor: pointer;
-     color: orange;
+     color: #E94F35;
    }
 }
 

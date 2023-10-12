@@ -216,7 +216,7 @@ a{
       width: 0%;
       bottom:-4px;
       height: 2px;
-      background-color: orange;
+      background-color: #E94F35;
       transition: width 0.3s ease-in-out;
     }
 
@@ -226,7 +226,17 @@ a{
 }
 
 a.router-link-active{
-    color: orange;
+  &::after{
+    position: relative;
+    content: "";
+    display: block;
+    width: 100%;
+    bottom:-4px;
+    height: 2px;
+    background-color: #E94F35;
+    transition: width 0.3s ease-in-out;
+  }
+
 }
 
 

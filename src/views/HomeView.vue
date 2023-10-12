@@ -5,22 +5,34 @@
         <div class="box inf inf2"></div>
         <div class="box inf inf3"></div>
         <div class="box inf inf4"></div>
-      <div class="box graph-1"></div>
-      <div class="box graph-2"></div>
+      <div class="box graph-1">
+       <chart-cpu></chart-cpu>
+      </div>
+      <div class="box graph-2">
+        <map-comp/>
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
+
+.leaflet-control-attribution {
+  display: none;
+}
+.leaflet-container {
+  z-index: 12;
+}
+
 .box{
     border-radius: 8px;
-    background: #e0e0e0;
+    background: #FAFAFA;
+    box-shadow: -4px -1px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 8px;
 }
 
 .container {
   padding: 64px;
-  height: 100VH;
   display: grid;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
@@ -33,12 +45,10 @@
     "graph-2 graph-2 graph-1 graph-1"
 }
 
-.graph-1 { grid-area: graph-1; }
+.graph-1 { grid-area: graph-1;
+background: #FAFAFA;}
 .graph-2 { grid-area: graph-2; }
-.inf1 { grid-area: inf1;
-
-
-}
+.inf1 { grid-area: inf1;}
 .inf2 { grid-area: inf2; }
 .inf3 { grid-area: inf3; }
 .inf4 { grid-area: inf4; }
@@ -60,13 +70,21 @@
     }
 }
 
-
-
 </style>
 
 <script>
 
+
+
+
+import ChartCpu from "@/components/ChartCpu.vue";
+import MapComp from "@/components/MapComp.vue";
+
 export default {
   name: 'HomeView',
+  components: {MapComp, ChartCpu},
+
+
+
 }
 </script>

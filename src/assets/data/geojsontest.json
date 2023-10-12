@@ -1,0 +1,483 @@
+[
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.0487836, 49.0515254]
+      },
+      "properties": {
+        "titre": "Collège Caroline Aigle",
+        "uai": "0952282P",
+        "etat": "actif",
+        "categorie1": "Collège",
+        "url": "https://sambaedu.0952282p.moncollege95.fr/admin",
+        "url1": "https://proxmox.0952282p.moncollege95.fr",
+        "ipfs": "172.19.164.4",
+        "ipad": "172.19.164.3"
+      }
+    }
+  ]
+},
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.0694566, 48.8928423]
+        },
+        "properties": {
+          "titre": "Bac à sable",
+          "uai": "0950000X",
+          "etat": "actif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.0694566, 48.8928423]
+        },
+        "properties": {
+          "titre": "Serveur central",
+          "uai": "0950000Z",
+          "etat": "actif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.04251980787915, 49.008473229851035]
+        },
+        "properties": {
+          "titre": "Collège Henri Guillaumet",
+          "uai": "0951527U",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.043556896629001, 49.046729051389576]
+      },
+      "properties": {
+        "titre": "Collège Gérard Philipe",
+        "uai": "0951617S",
+        "etat": "inactif",
+        "categorie1": "Collège",
+        "url": "https://",
+        "url1": "https://",
+        "ipfs": "",
+        "ipad": ""
+      }
+    }
+  ]
+},
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.3233564717289124, 48.987737690978605]
+        },
+        "properties": {
+          "titre": "Collège Charles Le Brun",
+          "uai": "0951799P",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.4556068429452678, 49.03287768745648]
+        },
+        "properties": {
+          "titre": "Collège Maximilien de Robespierre",
+          "uai": "0950026M",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.2806656975395767, 48.95721205965898]
+        },
+        "properties": {
+          "titre": "Collège Irène Joliot-Curie",
+          "uai": "0950885W",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.215217020041409, 48.93198915460544]
+        },
+        "properties": {
+          "titre": "Collège Henri Wallon",
+          "uai": "0950888Z",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.387060632393486, 48.98068018704452]
+        },
+        "properties": {
+          "titre": "Collège Anatole France",
+          "uai": "0950900M",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.369829998136058, 49.02825801670115]
+        },
+        "properties": {
+          "titre": "Collège Jean Bullant",
+          "uai": "0950941G",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.3760840596044286, 48.984492151035965]
+        },
+        "properties": {
+          "titre": "Collège Chantereine",
+          "uai": "0950943J",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.2795472566596398, 48.968252886047026]
+        },
+        "properties": {
+          "titre": "Collège Langevin-Wallon",
+          "uai": "0951190C",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.423410244344618, 49.10864660341667]
+        },
+        "properties": {
+          "titre": "Collège Anna de Noailles",
+          "uai": "0951357J",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.161579677149714, 49.018771798495806]
+        },
+        "properties": {
+          "titre": "Collège Le Petit Bois",
+          "uai": "0951726K",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.1918294545514514, 48.95928199584622]
+        },
+        "properties": {
+          "titre": "Collège Louis Hayet",
+          "uai": "0952045G",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.3045207631567903, 49.16048421881432]
+        },
+        "properties": {
+          "titre": "Collège Pierre Perret",
+          "uai": "0952087C",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.4623540548905716, 49.02629898419496]
+        },
+        "properties": {
+          "titre": "Collège Georges Charpak",
+          "uai": "0952128X",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.1389521699896146, 49.000878488447]
+        },
+        "properties": {
+          "titre": "Collège Isabelle Autissier",
+          "uai": "0952205F",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.260812481113145, 48.98615466477699]
+        },
+        "properties": {
+          "titre": "Collège Jules Ferry",
+          "uai": "0950019E",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  },
+  {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [2.24227464617648, 48.9786084453819]
+        },
+        "properties": {
+          "titre": "Collège Jean Moulin",
+          "uai": "0950722U",
+          "etat": "inactif",
+          "categorie1": "Collège",
+          "url": "https://",
+          "url1": "https://",
+          "ipfs": "",
+          "ipad": ""
+        }
+      }
+    ]
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]

@@ -1,0 +1,51 @@
+[
+{
+ 	"fields" : {
+							"titre": "Collège Caroline Aigle" ,
+							"uai": "0952282P",
+							"categorie1": "Collège",
+							"url": "https://sambaedu.0952282p.moncollege95.fr/admin",
+							"url1": "https://proxmox.0952282p.moncollege95.fr",
+							"ipfs": "172.19.164.4",
+							"ipad": "172.19.164.3",
+							"ram" : "#RAM",
+							"cpu" : "#CPU"
+					},
+	"geometry": {
+			"type": "Point",	
+			"coordinates": [2.0487836,49.0515254] 
+		}
+}
+,
+{
+ 	"fields" : {
+							"titre": "Bac à sable" ,
+							"uai": "0950000X",
+							"categorie1": "Collège",
+							"url": "https:// ",
+							"url1": "https:// ",
+							"ipfs": " ",
+							"ipad": " "
+					},
+	"geometry": {
+			"type": "Point",	
+			"coordinates": [2.0694566,48.8928423] 
+		}
+}
+,
+{
+ 	"fields" : {
+							"titre": "Serveur central" ,
+							"uai": "0950000Z",
+							"categorie1": "Collège",
+							"url": "https:// ",
+							"url1": "https:// ",
+							"ipfs": " ",
+							"ipad": " "
+					},
+	"geometry": {
+			"type": "Point",	
+			"coordinates": [2.0694566,48.8928423] 
+		}
+}
+]

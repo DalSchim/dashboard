@@ -1,0 +1,129 @@
+{
+  "menu": [
+      {
+        "title" : false,
+        "name": "Tableau de bord",
+        "cat": "item",
+        "icone": "fa-fw fa-tachometer-alt",
+        "url" : "tdb",
+        "sep" : false
+      },
+      {
+        "title": "Support établissements",
+        "name" : "Serveurs SE4",
+        "cat": "parent",
+        "icone": "fa-duotone fa-server",
+        "sep" : true,
+        "submenus" : [
+          {
+            "name": "Statistiques des SE4",
+            "url" : "sds"
+        },
+          {
+            "name": "Accès à distance",
+            "url" : "aad"
+        },
+          {
+            "name": "Assistance utilisateur",
+            "url" : "au"
+        },
+          {
+            "name": "Activer un nouveau site",
+            "url" : "auns"
+        }
+          ]
+      },
+      {
+        "title": false,
+        "name" : "PVE",
+        "cat": "parent",
+        "icone": "fa-database",
+        "sep" : false,
+        "submenus" : [
+          {
+            "name": "Stats des PVE",
+            "url" : "sdpve"
+        },
+          {
+            "name": "État des sauvegardes",
+            "url" : "eds"
+        }
+          ]
+      },
+      {
+        "title" : false,
+        "name": "État des liens",
+        "cat": "item",
+        "icone": "fa-network-wired",
+        "url" : "edl",
+        "sep" : true
+      },
+      {
+        "title" : false,
+        "name": "Cloud",
+        "cat": "item",
+        "icone": "fa-cloud",
+        "url" : "c",
+        "sep" : false
+      },
+      {
+        "title": "Actions",
+        "name" : "Action en masse",
+        "cat": "parent",
+        "icone": "fa-building",
+        "sep" : true,
+        "submenus" : [
+          {
+            "name": "Allumage / Extinction",
+            "url" : "ae"
+        },
+        {
+            "name": "Déploiement OS",
+            "url" : "OS"
+        },
+        {
+            "name": "Fonds d'écran",
+            "url" : "fde"
+        },
+        {
+            "name": "Mise à jour",
+            "url" : "maj"
+        }
+          ]
+      },
+      {
+        "title": false,
+        "name" : "Annuaire",
+        "cat": "parent",
+        "icone": "fa-users",
+        "sep" : false,
+        "submenus" : [
+          {
+            "name": "Recherche",
+            "url" : "r"
+        },
+        {
+            "name": "Imports / Exports",
+            "url" : "ie"
+        }
+          ]
+      },
+      {
+        "title": false,
+        "name" : "Autorisations",
+        "cat": "parent",
+        "icone": "fa-traffic-light",
+        "sep" : false,
+        "submenus" : [
+          {
+            "name": "Créer un compte",
+            "url" : "cuc"
+        },
+        {
+            "name": "Délégations (droit/site)",
+            "url" : "dds"
+        }
+          ]
+      }
+  ]
+}
