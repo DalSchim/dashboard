@@ -43,23 +43,19 @@ export default {
         });
         }
       },
-
       onEachFeature: function (feature, layer) {
         const popupContent = `
       <b>${feature.properties.titre}(${feature.properties.uai})</b></br>
-      Categorie1: ${feature.properties.categorie1uai }</br>
-      Autre info: ${feature.properties.t}`;
-
+      <a href="${feature.properties.url }">Interface SE4FS</a></br>
+      <a href="${feature.properties.url2}">Interface PVE</a><br>
+      <span>SE4FS :${feature.properties.ipfs}</span><br>
+      <span>SE4AD :${feature.properties.ipad}</span><br>
+      <span>cpu load :</span><br>
+      <span>Dernière requête :</span>
+       `;
         layer.bindPopup(popupContent);
       }
     }).addTo(this.map);
-
-
-
-
-
-
-
 
   }
 
@@ -75,6 +71,7 @@ export default {
 
 #map {
   height: 100%;
-  width: 100%;
 }
+
+
 </style>

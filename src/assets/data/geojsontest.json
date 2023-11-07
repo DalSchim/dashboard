@@ -33,7 +33,7 @@
         "properties": {
           "titre": "Bac à sable",
           "uai": "0950000X",
-          "etat": "actif",
+          "etat":"actif",
           "categorie1": "Collège",
           "url": "https://",
           "url1": "https://",
@@ -463,21 +463,4 @@
       }
     ]
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]

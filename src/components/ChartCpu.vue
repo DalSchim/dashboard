@@ -6,6 +6,14 @@
 </template>
 
 
+
+<style scoped>
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
 <script >
 import Chart from 'chart.js/auto';
 

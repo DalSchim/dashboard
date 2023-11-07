@@ -3,7 +3,9 @@
     <div class="container">
         <div class="box inf inf1"></div>
         <div class="box inf inf2"></div>
-        <div class="box inf inf3"></div>
+        <div class="box inf inf3">
+          <ram-component></ram-component>
+        </div>
         <div class="box inf inf4"></div>
       <div class="box graph-1">
        <chart-cpu></chart-cpu>
@@ -23,6 +25,8 @@
 .leaflet-container {
   z-index: 12;
 }
+
+
 
 .box{
     border-radius: 8px;
@@ -50,12 +54,15 @@ background: #FAFAFA;}
 .graph-2 { grid-area: graph-2; }
 .inf1 { grid-area: inf1;}
 .inf2 { grid-area: inf2; }
-.inf3 { grid-area: inf3; }
+.inf3 {
+  grid-area: inf3;
+  display: flex;
+
+}
 .inf4 { grid-area: inf4; }
 @media screen and (max-width: 910px) {
     .container {
       padding: 64px;
-      height: 100VH;
       display: grid;
       grid-auto-columns: 1fr;
       grid-auto-rows: 1fr;
@@ -68,6 +75,10 @@ background: #FAFAFA;}
         "graph-1 graph-1"
         "graph-2 graph-2"
     }
+
+  .inf{
+    max-height: 50%;
+  }
 }
 
 </style>
@@ -79,10 +90,11 @@ background: #FAFAFA;}
 
 import ChartCpu from "@/components/ChartCpu.vue";
 import MapComp from "@/components/MapComp.vue";
+import RamComponent from "@/components/RamComponent.vue";
 
 export default {
   name: 'HomeView',
-  components: {MapComp, ChartCpu},
+  components: {RamComponent, MapComp, ChartCpu},
 
 
 

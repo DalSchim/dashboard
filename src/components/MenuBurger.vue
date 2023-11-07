@@ -1,5 +1,6 @@
 <script>
 export default {
+  name: 'MenuBurger',
   data() {
     return {
       isActive: false,
@@ -46,7 +47,7 @@ export default {
       position: absolute;
       top: 16px;
       left: 16px;
-      z-index: 101;
+      z-index: 9999999;
     }
   }
 
@@ -54,7 +55,7 @@ export default {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: orange;
+    background-color: #E94F35;
     margin: 6px 0;
     transition: 0.4s;
   }

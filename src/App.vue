@@ -1,6 +1,7 @@
 <template>
     <div class="wrapeur">
-        <nav2-component/>
+       <!--<nav2-component/>-->
+      <new-nav/>
         <router-view/>
     </div>
 </template>
@@ -20,7 +21,7 @@
 
 .wrapeur{
     display: grid;
-    grid-template-columns: 14rem 1fr;
+    grid-template-columns: 0.02fr 1fr;
 }
 
 *{
@@ -43,5 +44,6 @@ router-view{
 }
 </style>
 <script setup>
-  import Nav2Component from "@/components/Nav2Component.vue";
+  /*import Nav2Component from "@/components/Nav2Component.vue";*/
+import NewNav from "@/components/NewNav.vue";
 </script>
