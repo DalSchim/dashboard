@@ -46,7 +46,7 @@ export default {
       cursor: pointer;
       position: absolute;
       top: 16px;
-      left: 16px;
+      right: 16px;
       z-index: 9999999;
     }
   }
@@ -61,11 +61,15 @@ export default {
   }
 
   .line.active {
+    top: 8px;
+    right: 0px;
     position: absolute;
     transform: rotate(-45deg);
   }
 
   .line2.active {
+    top: 8px;
+    right: 0px;
     position: absolute;
     transform: rotate(45deg);
   }

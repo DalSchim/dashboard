@@ -71,6 +71,7 @@ export default {
 
 #map {
   height: 100%;
+  border-radius: 8px;
 }
 
 

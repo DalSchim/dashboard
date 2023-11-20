@@ -45,8 +45,8 @@ export default {
 }
 
 .titel{
-  font-size: .7rem;
-  color: #009dff;
+  font-size: 1rem;
+  color: #E94F35;
 }
 
 .data{
@@ -56,7 +56,7 @@ export default {
 
 .ram-bar {
   height: 100%;
-  background-color: #009dff;
+  background-color: #E94F35;
   border-radius: 90px;
   text-align: center;
   line-height: 30px;
