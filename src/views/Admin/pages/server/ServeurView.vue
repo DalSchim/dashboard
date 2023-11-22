@@ -1,23 +1,32 @@
 <style scoped>
-.container {  display: grid;
+.container {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 0.9fr 1.1fr;
+  grid-template-rows:  0.5fr 1fr 1.1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
   grid-template-areas:
+    "tabs tabs tabs"
     "information stat-area stat-area"
     "information stat-area stat-area";
   width: 100%;
   height: 100vh;
 }
 
-.information { grid-area: information; }
+.information {
+  grid-area: information;
+  display: grid;
+  grid-template-columns: 1fr ;
+  grid-template-rows: 0.2fr 0.2fr 0.2fr;
+  gap: 16px ;
+  grid-auto-flow: row;
+  margin: 32px;
+
+}
 
 .stat-area {  display: grid;
-  justify-content: center;
-  align-items: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr ;
   gap: 16px 16px;
   grid-auto-flow: row;
   margin: 32px;
@@ -47,12 +56,47 @@
     padding: 16px;
 }
 
+/* responsive*/
+
+@media screen and (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1.1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "tabs tabs"
+      "information information"
+      "stat-area stat-area";
+  }
+  .stat-area {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 16px 16px;
+    grid-auto-flow: row;
+    margin: 32px;
+    grid-template-areas:
+      "cpu"
+      "ram"
+      "memory"
+      "user";
+    grid-area: stat-area;
+  }
+}
+
+
 </style>
-
-
 <template>
   <div class="container">
-    <div class="information"></div>
+    <div class="tabs"></div>
+    <div class="information">
+      <div class="box">
+        <utilisateur-component/>
+      </div>
+      <div class="box">
+        <ram-component/>
+      </div>
+    </div>
     <div class="stat-area">
       <div class=" box cpu">
         <chart-cpu/>
@@ -76,11 +120,12 @@ import ChartCpu from "@/components/ChartCpu.vue";
 import ChartRam from "@/components/ChartRam.vue";
 import ChartMemor from "@/components/ChartMemorie.vue";
 import ChartUtil from "@/components/Chartutil.vue";
+import UtilisateurComponent from "@/components/UtilisateurComponent.vue";
+import RamComponent from "@/components/RamComponent.vue";
 
 export default {
   name: 'AboutView',
-  components: {ChartUtil, ChartMemor, ChartRam, ChartCpu},
-
+  components: {RamComponent, UtilisateurComponent, ChartUtil, ChartMemor, ChartRam, ChartCpu},
 
 }
 
