@@ -14,7 +14,7 @@
         <RamComponent/>
       </div>
       <div class="chart">
-        <ChartCpu />
+        <ChartCpu/>
       </div>
     </div>
   </div>
@@ -51,7 +51,6 @@
   align-items: center;
   padding: 16px;
   gap: 32px;
-
 }
 
 .chart{
@@ -74,6 +73,8 @@
 }
 
 .container {
+  width: 100%;
+  height: 100vh;
   display: grid;
   grid-template-columns: 0.8fr 1fr 1fr;
   grid-template-rows: 1fr ;
@@ -90,13 +91,13 @@
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      "nav-contain nav-contain"
       "zone-map zone-map"
-      "zone-info zone-info"
+      "zone-map zone-map"
       "zone-info zone-info";
+
   }
 }
 

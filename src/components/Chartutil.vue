@@ -1,5 +1,5 @@
 <template>
-  <canvas id="myChart" aria-label="chart" role="img"></canvas>
+  <canvas id="myChartUtil" aria-label="chart" role="img"></canvas>
 </template>
 
 
@@ -15,21 +15,21 @@
 import Chart from 'chart.js/auto';
 
 export default {
-  name: 'ChartCpu',
+  name: 'ChartUtil',
 
   mounted() {
     // Récupérer le contexte 2D du canvas
-    const ctx = document.getElementById('myChart').getContext('2d');
+    const ctx = document.getElementById('myChartUtil').getContext('2d');
 
     // Données du graphique (exemple)
     const data = {
       labels: ['0h00', '1h00', '2h00', '3h00', '4h00'],
       datasets: [
         {
-          label: 'État du CPU',
+          label: 'nombre d\'utilisateur connecté',
           data: [0, 10, 5, 2, 20],
-          backgroundColor: '#009dff',
-          borderColor: '#009dff',
+          backgroundColor: '#0d50ff',
+          borderColor: 'rgb(13,80,255)',
           borderWidth: 2,
         },
       ],

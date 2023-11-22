@@ -1,5 +1,5 @@
 <template>
-  <canvas id="myChart" aria-label="chart" role="img"></canvas>
+  <canvas id="myChartMemor" aria-label="chart" role="img"></canvas>
 </template>
 
 
@@ -15,21 +15,21 @@
 import Chart from 'chart.js/auto';
 
 export default {
-  name: 'ChartCpu',
+  name: 'ChartMemor',
 
   mounted() {
     // Récupérer le contexte 2D du canvas
-    const ctx = document.getElementById('myChart').getContext('2d');
+    const ctx = document.getElementById('myChartMemor').getContext('2d');
 
     // Données du graphique (exemple)
     const data = {
       labels: ['0h00', '1h00', '2h00', '3h00', '4h00'],
       datasets: [
         {
-          label: 'État du CPU',
+          label: 'État de la Mémoire',
           data: [0, 10, 5, 2, 20],
-          backgroundColor: '#009dff',
-          borderColor: '#009dff',
+          backgroundColor: '#0c0c0c',
+          borderColor: '#000000',
           borderWidth: 2,
         },
       ],
