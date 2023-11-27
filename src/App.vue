@@ -22,5 +22,5 @@
 
 </style>
 <script setup>
-  /*import Nav2Component from "@/components/Nav2Component.vue";*/
+
 </script>

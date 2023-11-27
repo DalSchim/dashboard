@@ -31,6 +31,8 @@ export default {
           backgroundColor: '#009dff',
           borderColor: '#009dff',
           borderWidth: 2,
+          tension: 0.3,
+          pointRadius: 0,
         },
       ],
     };
@@ -49,6 +51,7 @@ export default {
       type: 'line', // Type de graphique (bar, line, etc.)
       data: data,
       options: options,
+
     });
   },
 }

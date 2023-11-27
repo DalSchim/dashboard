@@ -1,9 +1,10 @@
 <style scoped>
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:  0.5fr 1fr 1.1fr;
-  gap: 0px 0px;
+  gap: 0 0;
   grid-auto-flow: row;
   grid-template-areas:
     "tabs tabs tabs"
@@ -50,10 +51,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    border-radius: 8px;
-    background: #FAFAFA;
-    box-shadow: -4px -1px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 16px;
+  border-radius: 8px;
+  background: #FAFAFA;
+  box-shadow: -4px -1px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 16px;
 }
 
 /* responsive*/
@@ -62,7 +63,7 @@
   .container {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.5fr 1fr 1.1fr;
-    gap: 0px 0px;
+    gap: 0 0;
     grid-auto-flow: row;
     grid-template-areas:
       "tabs tabs"
@@ -115,7 +116,6 @@
 </template>
 
 <script>
-
 import ChartCpu from "@/components/ChartCpu.vue";
 import ChartRam from "@/components/ChartRam.vue";
 import ChartMemor from "@/components/ChartMemorie.vue";
@@ -128,7 +128,4 @@ export default {
   components: {RamComponent, UtilisateurComponent, ChartUtil, ChartMemor, ChartRam, ChartCpu},
 
 }
-
 </script>
-
-

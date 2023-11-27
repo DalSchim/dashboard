@@ -31,6 +31,8 @@ export default {
           backgroundColor: '#0d50ff',
           borderColor: 'rgb(13,80,255)',
           borderWidth: 2,
+          tension: 0.3,
+          pointRadius: 0,
         },
       ],
     };

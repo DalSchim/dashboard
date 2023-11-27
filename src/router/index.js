@@ -2,7 +2,6 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 import Login from "@/views/auth/LoginView.vue";
 import NotView from "@/views/NotView.vue";
 import dashBoard from "@/views/Admin/DashBoard.vue";
-/*import {authGuard} from "@/_helpers/autGuard";*/
 
 const routes = [
   {
@@ -42,6 +41,6 @@ const router = createRouter({
   routes
 })
 
-/*router.beforeEach(authGuard);*/
+
 
 export default router
