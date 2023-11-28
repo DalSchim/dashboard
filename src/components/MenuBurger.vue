@@ -45,8 +45,8 @@ export default {
       display: block;
       cursor: pointer;
       position: absolute;
-      top: 16px;
-      right: 16px;
+      top: 11px;
+      left: 11px;
       z-index: 9999999;
     }
   }
@@ -62,14 +62,14 @@ export default {
 
   .line.active {
     top: 8px;
-    right: 0px;
+    left: 0px;
     position: absolute;
     transform: rotate(-45deg);
   }
 
   .line2.active {
     top: 8px;
-    right: 0px;
+    left: 0px;
     position: absolute;
     transform: rotate(45deg);
   }

@@ -93,14 +93,15 @@
   }
 }
 
+.margin{
+  margin-left: 44px;
+}
+
 
 </style>
 <template>
   <v-card>
-    <v-tabs
-        v-model="tab"
-        color="#E94F35"
-    >
+    <v-tabs class="margin" v-model="tab" color="#E94F35" >
       <v-tab value="stat">Stat des SE4</v-tab>
       <v-tab value="accès">Accès à distance</v-tab>
       <v-tab value="assistance">Assistance utilsateur</v-tab>
