@@ -76,7 +76,6 @@
     grid-template-rows: 1fr 1fr;
     gap: 16px 16px;
     grid-auto-flow: row;
-    margin: 32px;
     grid-template-areas:
       "cpu"
       "ram"
@@ -84,6 +83,13 @@
       "user";
     grid-area: stat-area;
     overflow-y: scroll;
+    margin: 0;
+    padding: 8px;
+  }
+
+  .information{
+    padding: 8px;
+    margin: 0;
   }
 }
 
