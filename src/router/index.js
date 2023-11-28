@@ -27,6 +27,7 @@ const routes = [
         { path:'annuaire', name: 'annuaire',component: () => import('@/views/Admin/pages/annuaire/AnnuaireView.vue')},
         { path:'cloud', name: 'profil', component: () => import('@/views/Admin/pages/CloudView.vue')},
         { path:'autorisation', name: 'autorisation', component: () => import('@/views/Admin/pages/autorisation/AutorView.vue')},
+        { path:'testview', name: 'testview', component: () => import('@/views/Admin/pages/TestView.vue')},
     ],
       meta: { requiresAuth: true },
   },

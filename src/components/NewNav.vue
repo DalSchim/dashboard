@@ -18,6 +18,7 @@
         <router-link to="action"><link-component icon="carbon:flash-filled" linkName="Action en masse" /></router-link>
         <router-link to="annuaire"><link-component icon="fluent:calendar-agenda-28-filled" linkName="Annuaire" /></router-link>
         <router-link to="autorisation"><link-component icon="material-symbols:key" linkName="Autorisations" /></router-link>
+        <router-link to="testview"><link-component icon="mdi:gear" linkName="TestView" /></router-link>
       </ul>
 
     </nav>
