@@ -35,6 +35,7 @@ export default{
   transition: width 0.5s;
   background: #2A3138;
   color: #ffff;
+  transition: width 0.5s;
   border-radius: 8px;
   box-shadow: -4px -1px 4px 0px rgba(0, 0, 0, 0.25);
   span {
@@ -47,7 +48,7 @@ export default{
   border-radius:16px;
   border: #E94F35 solid 1px;
   padding: 8px 16px;
-  width: 200px;
+  width: 180px;
   justify-content: space-between;
   align-items: center;
   span{

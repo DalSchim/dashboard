@@ -63,14 +63,14 @@ export default {
   .line.active {
     top: 8px;
     left: 0px;
-    position: absolute;
+    position: fixed;
     transform: rotate(-45deg);
   }
 
   .line2.active {
     top: 8px;
     left: 0px;
-    position: absolute;
+    position: fixed;
     transform: rotate(45deg);
   }
 

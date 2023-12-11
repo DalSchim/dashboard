@@ -5,9 +5,10 @@ import DropFile from "@/components/DropFile.vue";
 import ImageGalery from "@/components/ImageGalery.vue";
 
 export default {
-    name: 'ActionView',
-  components: {ImageGalery, DropFile},
-
+  name: 'ActionView',
+  components: {
+    ImageGalery,
+    DropFile},
 }
 
 </script>
@@ -31,7 +32,8 @@ export default {
 </template>
 
 <style scoped>
-.container {  display: grid;
+.container {
+  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0.4fr 1fr;
   grid-auto-columns: 1fr;
@@ -42,10 +44,16 @@ export default {
     "form galeri";
 }
 
-.tabs { grid-area: tabs; }
+.tabs {
+  grid-area: tabs;
+}
 
-.form { grid-area: form; }
+.form {
+  grid-area: form;
+}
 
-.galeri { grid-area: galeri; }
+.galeri {
+  grid-area: galeri;
+}
 
 </style>

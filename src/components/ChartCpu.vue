@@ -3,15 +3,14 @@
 </template>
 
 
-
 <style scoped>
-  canvas {
-    width: 100%;
-    height: 100%;
-  }
+canvas {
+  width: 100%;
+  height: 100%;
+}
 </style>
 
-<script >
+<script>
 import Chart from 'chart.js/auto';
 
 export default {
@@ -55,7 +54,6 @@ export default {
     });
   },
 }
-
 
 
 </script>
