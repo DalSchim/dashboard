@@ -5,7 +5,7 @@ import dashBoard from "@/views/Admin/DashBoard.vue";
 
 const routes = [
     {
-        path: '/' & '/#/',
+        path: '/ | /#/',
         redirect: '/login',
         children: [
             {path: '/login', name: 'login', component: Login,}
