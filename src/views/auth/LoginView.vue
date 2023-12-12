@@ -100,7 +100,7 @@
 </template>
 
 <script>
-import axios from "axios";
+
 
 export default {
   name: "LoginView",
@@ -113,26 +113,7 @@ export default {
       }
     }
   },
-  methods: {
-    handlesubmit() {
-      const data = {
-        identifiant: this.user.identifiant,
-        password: this.user.password,
-      }
-      axios.post("http://localhost:3000/login", data)
-          .then(
-              res => {
-                console.log(res)
-              }
-          ).catch(
-          err => {
-            console.log(err)
-          }
-      )
 
-    }
-
-  },
 
 }
 </script>
