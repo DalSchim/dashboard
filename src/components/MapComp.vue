@@ -51,8 +51,7 @@ export default {
       <span>SE4FS :${feature.properties.ipfs}</span><br>
       <span>SE4AD :${feature.properties.ipad}</span><br>
       <span>cpu load :</span><br>
-      <span>Dernière requête :</span>
-       `;
+      <span>Dernière requête :</span>`;
         layer.bindPopup(popupContent);
       }
     }).addTo(this.map);
@@ -65,6 +64,9 @@ export default {
 
 <template>
   <div id="map"></div>
+  <div>
+
+  </div>
 </template>
 
 <style scoped>
@@ -73,6 +75,7 @@ export default {
   height: 100%;
   border-radius: 8px;
 }
+
 
 
 </style>

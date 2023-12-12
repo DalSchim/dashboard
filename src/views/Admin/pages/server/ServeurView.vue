@@ -1,5 +1,4 @@
 <style scoped>
-
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -90,10 +89,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
-
-
 }
 
 
@@ -148,11 +143,8 @@
       "view-pc";
     width: 100%;
     height: 100vh;
-
   }
 }
-
-
 
 </style>
 <template>
@@ -247,8 +239,6 @@
         <v-window-item value="assistance">
           Three
         </v-window-item>
-
-
         <v-window-item value="nouveau">
           nouveau
         </v-window-item>
