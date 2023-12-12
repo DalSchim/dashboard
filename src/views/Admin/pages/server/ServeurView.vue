@@ -63,9 +63,6 @@
   padding: 16px;
 }
 
-.v-card--variant-elevated {
-  background: none;
-}
 
 .tab-container {
   display: grid;
@@ -112,6 +109,7 @@
     grid-template-rows: 1fr 1fr;
     gap: 16px 16px;
     grid-auto-flow: row;
+    margin: 32px;
     grid-template-areas:
       "cpu"
       "ram"
@@ -119,6 +117,7 @@
       "user";
     grid-area: stat-area;
     overflow-y: scroll;
+<<<<<<< HEAD
     margin: 0;
     padding: 8px;
   }
@@ -126,6 +125,8 @@
   .information {
     padding: 8px;
     margin: 0;
+=======
+>>>>>>> parent of 14eab5d (responsive card statSe4)
   }
 
   .margin {
