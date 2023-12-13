@@ -117,7 +117,6 @@
       "user";
     grid-area: stat-area;
     overflow-y: scroll;
-<<<<<<< HEAD
     margin: 0;
     padding: 8px;
   }
@@ -125,8 +124,7 @@
   .information {
     padding: 8px;
     margin: 0;
-=======
->>>>>>> parent of 14eab5d (responsive card statSe4)
+
   }
 
   .margin {
