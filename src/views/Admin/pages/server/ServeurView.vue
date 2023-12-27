@@ -70,14 +70,14 @@
   grid-template-rows: 1fr;
   gap: 16px;
   grid-auto-flow: row;
-  grid-template-areas:
+   grid-template-areas:
       "form view-pc";
   width: 100%;
   height: 90vh;
 }
 
 .view-pc {
-  background: black;
+  background:black ;
   box-shadow: -4px -1px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   grid-area: view-pc;
@@ -124,6 +124,7 @@
   .information {
     padding: 8px;
     margin: 0;
+
   }
 
   .margin {
@@ -238,7 +239,7 @@
           Three
         </v-window-item>
         <v-window-item value="nouveau">
-          <activer-site/>
+          nouveau
         </v-window-item>
 
       </v-window>
@@ -256,14 +257,10 @@ import ChartUtil from "@/components/Chartutil.vue";
 import UtilisateurComponent from "@/components/UtilisateurComponent.vue";
 import RamComponent from "@/components/RamComponent.vue";
 import FormAccerdistance from "@/components/FormAccerdistance.vue";
-import ActiverSite from "@/views/Admin/pages/server/ActiverSite.vue";
 
 export default {
   name: 'AboutView',
-  components: {
-    ActiverSite,
-    FormAccerdistance, RamComponent, UtilisateurComponent, ChartUtil, ChartMemor, ChartRam, ChartCpu
-  },
+  components: {FormAccerdistance, RamComponent, UtilisateurComponent, ChartUtil, ChartMemor, ChartRam, ChartCpu},
   data: () => ({
     tab: null,
   }),
