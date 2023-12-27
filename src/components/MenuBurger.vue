@@ -12,7 +12,7 @@ export default {
       this.$emit('toggle-menu', this.isActive);
     },
 
-    resetIcone(){
+    resetIcone() {
       this.isActive = false;
       this.isVisible = false;
     },
@@ -23,7 +23,7 @@ export default {
 
 <template>
   <div class="bouton-menu">
-      <span class="menu-burger" @click="toggleMenu" >
+      <span class="menu-burger" @click="toggleMenu">
         <span class="line" :class="{active: isActive}"></span>
         <span class="line2" :class="{active: isActive}"></span>
         <span class="line3" :class="{active: isActive}"></span>
@@ -33,15 +33,15 @@ export default {
 
 <style scoped>
 
-.bouton-menu{
+.bouton-menu {
   display: none;
 }
 
-@media screen and (max-width: 910px){
-  .bouton-menu{
+@media screen and (max-width: 910px) {
+  .bouton-menu {
     display: block;
 
-    .menu-burger{
+    .menu-burger {
       display: block;
       cursor: pointer;
       position: absolute;

@@ -5,8 +5,9 @@ export default {
 </script>
 
 <template>
-  <h1> anuaire </h1>
-
+  <h1>
+    Annuaire
+  </h1>
 </template>
 
 <style scoped>

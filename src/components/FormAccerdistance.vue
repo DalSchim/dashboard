@@ -26,4 +26,6 @@ export default {
 
 <style scoped>
 /* Ajoutez vos styles spécifiques au composant ici si nécessaire */
+
+
 </style>

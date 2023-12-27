@@ -2,15 +2,17 @@
   <menu-burger @toggle-menu="handleToggleMenu" ref="menuBurger"></menu-burger>
   <div class="nav" v-if="isVisible" id="app">
     <router-link to="home">
-      <div class="logo">
-        <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-              d="M0 0L3.53118 7.95727H9.69586V22H22.2684L32 0H27.1999C23.2343 0 20.7857 1.55224 19.4629 5.15424L15.9696 14.6754L10.6143 0H0Z"
-              fill="#E94F35"/>
-        </svg>
+      <div>
+        <div class="logo">
+          <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M0 0L3.53118 7.95727H9.69586V22H22.2684L32 0H27.1999C23.2343 0 20.7857 1.55224 19.4629 5.15424L15.9696 14.6754L10.6143 0H0Z"
+                fill="#E94F35"/>
+          </svg>
+        </div>
+        <hr>
       </div>
     </router-link>
-    <hr>
     <nav>
       <ul>
         <router-link to="server">
@@ -38,8 +40,8 @@
           <link-component icon="mdi:gear" linkName="TestView"/>
         </router-link>
       </ul>
-
     </nav>
+    <disconect-view/>
   </div>
 
 </template>
@@ -48,10 +50,13 @@
 import LinkComponent from "@/components/LinkComponent.vue";
 import MenuBurger from "@/components/MenuBurger.vue";
 import router from "@/router";
+import DisconectView from "@/components/DisconectView.vue";
 
 export default {
   name: "NewNav",
-  components: {MenuBurger, LinkComponent},
+  components: {DisconectView, MenuBurger, LinkComponent},
+
+
   data() {
     return {
       isVisible: (window.innerWidth > 910) == true,
@@ -64,6 +69,7 @@ export default {
         this.$refs.menuBurger.resetIcone();
       }
     },
+
   },
   created() {
     router.beforeEach((to, from, next) => {
@@ -78,19 +84,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 hr {
-  width: 70%;
+  margin: 15px 0px;
 }
+
 
 a {
   text-decoration: none;
   color: #ffff;
 }
 
+.profil {
+
+  width: 100%;
+}
+
 .nav {
   position: relative;
   align-items: center;
-  justify-content: start;
+  justify-content: space-between;
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -139,8 +152,5 @@ a {
       position: static;
     }
   }
-
 }
-
-
 </style>

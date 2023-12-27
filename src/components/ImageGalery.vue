@@ -1,30 +1,37 @@
-
-
 <template>
-  <div class="gallery">
-    <div class="thumbnail" onclick="showImage('image1.jpg')">
-      <img src="https://picsum.photos/200" alt="">
-    </div>
-    <div class="thumbnail" onclick="showImage('image2.jpg')">
-      <img src="https://picsum.photos/200" alt="">
-    </div>
-    <div class="thumbnail" onclick="showImage('image3.jpg')">
-      <img src="https://picsum.photos/200" alt="">
-    </div>
-    <div class="thumbnail" onclick="showImage('image3.jpg')">
-      <img src="https://picsum.photos/200" alt="">
-    </div>
-    <div class="thumbnail" onclick="showImage('image3.jpg')">
-      <img src="https://picsum.photos/200" alt="">
-    </div>
-    <div class="thumbnail" onclick="showImage('')">
-      <img  src="https://picsum.photos/200" alt="">
+  <!--creation d'une galerie qui vas afficher les image importer par le drop fill qui est envois en bdd et recupére a l'aide d'un api-->
+
+  <div class="galerie">
+    <div class="galeri-wrapeur">
+      <div class="galeri-contain">
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+        <div class="galeri-image">
+          <img src="https://picsum.photos/200/300" alt="">
+        </div>
+      </div>
+
     </div>
 
-    <div class="modal" id="modal">
-      <span class="close" onclick="hideImage()">&times;</span>
-      <img alt="" class="modal-content" id="modalImage">
-    </div>
   </div>
 
 </template>
@@ -32,75 +39,130 @@
 <script>
 export default {
   name: 'ImageGalery',
-  mounted() {
-    window.showImage = this.showImage;
-    window.hideImage = this.hideImage;
-  },
-  methods: {
-    showImage(image) {
-      document.getElementById('modal').style.display = 'block';
-      document.getElementById('modalImage').src = image;
-    },
-    hideImage() {
-      document.getElementById('modal').style.display = 'none';
-    },
-  },
-};
-
+}
 </script>
 
-
 <style scoped lang="scss">
-.gallery {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.thumbnail {
-  margin: 10px;
-  cursor: pointer;
-}
-
-.thumbnail img {
-  width: 150px;
-  height: 100px;
-  object-fit: cover;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 50px;
-  left: 0;
-  top: 0;
+.galerie {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background: #F8F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .galeri-wrapeur {
+    width: 80%;
+    height: 80%;
+    background: #FFFFFF;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .galeri-contain {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      padding: 12px;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: center;
+      overflow: scroll;
+      gap: 16px;
+
+      .galeri-image {
+        width: 200px;
+        height: 200px;
+        background: #E94F35;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+          transition: 0.3s;
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            object-fit: cover;
+          }
+          &:active {
+            transform: scale(1.2);
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .galerie {
+    width: 100%;
+    height: 100%;
+    background: #F8F8F8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .galeri-wrapeur {
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+
+      .galeri-contain {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        padding: 12px;
+        flex-wrap: wrap;
+        justify-content: start;
+        align-items: center;
+        overflow: scroll;
+        gap: 16px;
+
+        .galeri-image {
+          width: 200px;
+          height: 200px;
+          background: #E94F35;
+          border-radius: 8px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.3s;
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.1);
+              object-fit: cover;
+            }
+            &:active {
+              transform: scale(1.2);
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 800px;
-  max-height: 80vh;
-}
-
-.close {
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  position: absolute;
-  top: 15px;
-  right: 25px;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: #ccc;
-}
 
 </style>

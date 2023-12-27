@@ -7,6 +7,7 @@
       <v-tab value="one">Item One</v-tab>
       <v-tab value="two">Item Two</v-tab>
       <v-tab value="three">Item Three</v-tab>
+      <v-tab value="for">Item for</v-tab>
     </v-tabs>
 
     <v-card-text>
@@ -21,6 +22,10 @@
 
         <v-window-item value="three">
           Three
+        </v-window-item>
+
+        <v-window-item value="for">
+          fore
         </v-window-item>
       </v-window>
     </v-card-text>
