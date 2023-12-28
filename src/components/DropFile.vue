@@ -1,5 +1,6 @@
 <template>
   <div :class="{ 'highlight': highlight, 'drop': drop }" class="container-drop-file">
+    <h1>Nouvel image</h1>
     <div class="drop-zone" @dragover.prevent="onDragOver" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop">
       <span class="drop-zone__prompt">Drop files here or click to upload</span>
       <input type="file" name="myFile" class="drop-zone__input" @change="onFileChange">
@@ -121,6 +122,7 @@ export default {
 .container-drop-file {
   display: flex;
   flex-direction: column;
+  gap: 32px;
   align-items: center;
   font-family: sans-serif;
   width: 100%;
@@ -132,6 +134,12 @@ export default {
   color: #ccc;
   outline: none;
   transition: border .24s ease-in-out;
+
+
+  h1{
+    font-size: 1.5rem;
+    color: #E94F35;
+  }
 
   &.highlight {
     border-color: #E94F35;

@@ -94,6 +94,15 @@
       <button type="submit">Connexion</button>
     </form>
 
+    <form class="otp-form">
+      <h1>Verification OTP</h1>
+      <div class="pack-form">
+        <label for="otp">Verfy votre code otp</label>
+        <v-otp-input>
+        </v-otp-input>
+      </div>
+      <button type="submit">Connexion</button>
+    </form>
   </div>
 
 
@@ -113,6 +122,11 @@ export default {
       }
     }
   },
+  methods: {
+    handlesubmit() {
+      this.$router.push({name: 'dashboard'})
+    }
+  }
 
 
 }
@@ -139,7 +153,6 @@ export default {
     margin-bottom: 20px;
     color: #E94F35;
   }
-
 
   form {
     display: flex;
@@ -193,6 +206,18 @@ export default {
         transform: scale(1.1);
       }
     }
+  }
+  .otp-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    background: #fff;
+    height: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
   }
 }
 

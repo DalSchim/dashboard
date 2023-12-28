@@ -2,8 +2,7 @@
   <v-card>
     <v-tabs
         v-model="tab"
-        color="#E94F35"
-    >
+        color="#E94F35">
       <v-tab value="one">Item One</v-tab>
       <v-tab value="two">Item Two</v-tab>
       <v-tab value="three">Item Three</v-tab>
@@ -13,7 +12,7 @@
     <v-card-text>
       <v-window v-model="tab">
         <v-window-item value="one">
-          One
+          <os-form-component/>
         </v-window-item>
 
         <v-window-item value="two">
@@ -33,7 +32,10 @@
   </v-card>
 </template>
 <script>
+import OsFormComponent from "@/components/OsFormComponenent.vue";
+
 export default {
+  components: {OsFormComponent},
   data: () => ({
     tab: null,
   }),

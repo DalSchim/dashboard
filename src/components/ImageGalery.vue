@@ -29,9 +29,7 @@
           <img src="https://picsum.photos/200/300" alt="">
         </div>
       </div>
-
     </div>
-
   </div>
 
 </template>
@@ -88,11 +86,13 @@ export default {
           object-fit: cover;
           border-radius: 8px;
           transition: 0.3s;
+
           &:hover {
             cursor: pointer;
             transform: scale(1.1);
             object-fit: cover;
           }
+
           &:active {
             transform: scale(1.2);
             object-fit: cover;
@@ -102,6 +102,7 @@ export default {
     }
   }
 }
+
 @media screen and (max-width: 768px) {
   .galerie {
     width: 100%;
@@ -148,11 +149,13 @@ export default {
             object-fit: cover;
             border-radius: 8px;
             transition: 0.3s;
+
             &:hover {
               cursor: pointer;
               transform: scale(1.1);
               object-fit: cover;
             }
+
             &:active {
               transform: scale(1.2);
               object-fit: cover;
