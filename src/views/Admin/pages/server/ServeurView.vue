@@ -157,47 +157,14 @@
 
     <v-card-text>
       <v-window v-model="tab">
-
         <v-window-item value="stat">
-          <form action="">
-            <v-row>
-              <v-col cols="12" sm="6" md="3">
-                <v-text-field
-                    v-model="search"
-                    append-icon="mdi-magnify"
-                    label="Search"
-                    single-line
-                    hide-details
-                ></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="3">
-                <v-select
-                    v-model="select"
-                    :items="items"
-                    label="Select"
-                    single-line
-                    hide-details
-                ></v-select>
-              </v-col>
-              <v-col cols="12" sm="6" md="3">
-                <v-select
-                    v-model="select"
-                    :items="items"
-                    label="Select"
-                    single-line
-                    hide-details
-                ></v-select>
-              </v-col>
-              <v-col cols="12" sm="6" md="3">
-                <v-select
-                    v-model="select"
-                    :items="items"
-                    label="Select"
-                    single-line
-                    hide-details
-                ></v-select>
+          <form @submit.prevent>
+            <v-row class="flex-0-1" >
+              <v-col class="flex ">
+                <v-select label="établisement" class="w-25"/>
               </v-col>
             </v-row>
+
           </form>
           <div class="container">
             <div class="information">
@@ -263,6 +230,9 @@ export default {
   components: {FormAccerdistance, RamComponent, UtilisateurComponent, ChartUtil, ChartMemor, ChartRam, ChartCpu},
   data: () => ({
     tab: null,
+    search: '',
+
   }),
+
 }
 </script>

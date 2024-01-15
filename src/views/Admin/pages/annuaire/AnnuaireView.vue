@@ -9,12 +9,7 @@
         <v-window-item class="windo" value="one">
           <div class="recher-form">
             <h2>Recherche d'utilisateur dans l'annuaire</h2>
-            <v-text-field
-                v-model="search"
-                label="Search"
-                single-line
-                hide-details
-            ></v-text-field>
+            <searsh-bar></searsh-bar>
             <div class="v-butun">
               <v-btn
                   color="#E94F35"
@@ -170,8 +165,11 @@
 </template>
 
 <script>
+import SearshBar from "@/components/SearshBar.vue";
+
 export default {
   name: "AnnuaireView",
+  components: {SearshBar},
   data: () => ({
     tab: null,
     search: "",
