@@ -39,6 +39,9 @@
         <router-link to="testview">
           <link-component icon="mdi:gear" linkName="TestView"/>
         </router-link>
+        <router-link to="securité" >
+          <link-component icon="carbon:security" linkName="Sécurité"/>
+        </router-link>
       </ul>
     </nav>
     <disconect-view/>
