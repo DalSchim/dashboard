@@ -56,6 +56,9 @@ const routes = [
                 component: () => import('@/views/Admin/pages/autorisation/AutorView.vue')
             },
             {path: 'testview', name: 'testview', component: () => import('@/views/Admin/pages/TestView.vue')},
+            {
+                path: 'securité', name: 'securité', component: () => import('@/views/Admin/pages/securite/SecuriteView.vue')
+            }
         ],
         meta: {requiresAuth: true},
     },

@@ -16,7 +16,7 @@
         </v-window-item>
 
         <v-window-item value="two">
-          Two
+          <searsh-bar/>
         </v-window-item>
 
         <v-window-item value="three">
@@ -33,9 +33,10 @@
 </template>
 <script>
 import OsFormComponent from "@/components/OsFormComponenent.vue";
+import SearshBar from "@/components/SearshBar.vue";
 
 export default {
-  components: {OsFormComponent},
+  components: {SearshBar, OsFormComponent},
   data: () => ({
     tab: null,
   }),

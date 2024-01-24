@@ -3,6 +3,8 @@
 
 import DropFile from "@/components/DropFile.vue";
 import ImageGalery from "@/components/ImageGalery.vue";
+import DeploimentosView from "@/views/Admin/pages/action/DeploimentosView.vue";
+import AplicationView from "@/views/Admin/pages/action/AplicationView.vue";
 
 
 export default {
@@ -11,6 +13,8 @@ export default {
     tab: null,
   }),
   components: {
+    AplicationView,
+    DeploimentosView,
     ImageGalery,
     DropFile
   },
@@ -28,6 +32,7 @@ export default {
       <v-tab value="two">Font d’écrans</v-tab>
       <v-tab value="three">Deploiment os</v-tab>
       <v-tab value="fore">Mise à jour</v-tab>
+      <v-tab  value="five">instalation d'aplication</v-tab>
 
     </v-tabs>
 
@@ -45,19 +50,20 @@ export default {
                 <drop-file/>
               </form>
             </div>
-
             <div class="galeri">
               <image-galery/>
             </div>
-
           </div>
         </v-window-item>
 
-        <v-window-item value="three">
-          Three
+        <v-window-item class="pa-2" value="three">
+          <deploimentos-view/>
         </v-window-item>
         <v-window-item value="fore">
           fore
+        </v-window-item>
+        <v-window-item value="five">
+          <aplication-view/>
         </v-window-item>
       </v-window>
     </v-card-text>

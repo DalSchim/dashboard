@@ -1,8 +1,12 @@
 <template>
+  <div class="wraper">
+
+
   <v-stepper
       v-model="step"
       :items="items"
       show-actions
+      class="stepper"
   >
     <template v-slot:item.1>
       <form @submit.prevent="handlesubmit">
@@ -22,6 +26,14 @@
     </template>
 
     <template v-slot:item.2>
+      <h1> code totp</h1>
+      <form @submit.prevent="handlesubmit">
+        <div class="pack-form">
+          <label for="code">code</label>
+          <input type="text" name="" id="code" placeholder="Votre code" v-model="user.code">
+        </div>
+        <button type="submit">Connexion</button>
+      </form>
 
     </template>
 
@@ -30,6 +42,7 @@
     </template>
 
   </v-stepper>
+  </div>
 </template>
 <script>
 export default {
@@ -48,32 +61,25 @@ export default {
       'Select Shipping',
       'Submit',
     ],
-    products: [
-      {
-        name: 'Product 1',
-        price: 10,
-        quantity: 2,
-      },
-      {
-        name: 'Product 2',
-        price: 15,
-        quantity: 10,
-      },
-    ],
   }),
-
-  computed: {
-    subtotal () {
-      return this.products.reduce((acc, product) => acc + product.quantity * product.price, 0)
-    },
-    total () {
-      return this.subtotal + Number(this.shipping ?? 0)
-    },
-  },
 }
 </script>
 
-<style>
+<style scoped>
+
+.wraper{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.stepper{
+
+  max-width: 500px;
+
+}
+
   .pack-form {
     display: flex;
     flex-direction: column;

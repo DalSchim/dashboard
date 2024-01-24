@@ -70,14 +70,14 @@
   grid-template-rows: 1fr;
   gap: 16px;
   grid-auto-flow: row;
-   grid-template-areas:
+  grid-template-areas:
       "form view-pc";
   width: 100%;
   height: 90vh;
 }
 
 .view-pc {
-  background:black ;
+  background: black;
   box-shadow: -4px -1px 4px 0 rgba(0, 0, 0, 0.25);
   border-radius: 8px;
   grid-area: view-pc;
@@ -124,7 +124,6 @@
   .information {
     padding: 8px;
     margin: 0;
-
   }
 
   .margin {
@@ -159,7 +158,7 @@
       <v-window v-model="tab">
         <v-window-item value="stat">
           <form @submit.prevent>
-            <v-row class="flex-0-1" >
+            <v-row class="flex-0-1">
               <v-col class="flex ">
                 <v-select label="établisement" class="w-25"/>
               </v-col>

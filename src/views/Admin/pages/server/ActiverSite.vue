@@ -1,4 +1,8 @@
 <script setup>
+export default {
+  name : "ActiverSite",
+
+}
 
 </script>
 
