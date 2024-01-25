@@ -187,6 +187,9 @@
               <div class=" box user">
                 <chart-util/>
               </div>
+              <div>
+                <chart-test/>
+              </div>
             </div>
           </div>
         </v-window-item>
@@ -223,10 +226,19 @@ import ChartUtil from "@/components/Chartutil.vue";
 import UtilisateurComponent from "@/components/UtilisateurComponent.vue";
 import RamComponent from "@/components/RamComponent.vue";
 import FormAccerdistance from "@/components/FormAccerdistance.vue";
+import ChartTest from "@/components/ChartTest.vue";
 
 export default {
   name: 'AboutView',
-  components: {FormAccerdistance, RamComponent, UtilisateurComponent, ChartUtil, ChartMemor, ChartRam, ChartCpu},
+  components: {
+    ChartTest,
+    FormAccerdistance,
+    RamComponent,
+    UtilisateurComponent,
+    ChartUtil,
+    ChartMemor,
+    ChartRam,
+    ChartCpu},
   data: () => ({
     tab: null,
     search: '',

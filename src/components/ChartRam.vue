@@ -33,9 +33,9 @@ export default {
           data: [ 0,2,3,3,3,5,10,12,6,3,3,3,5,2,],
           backgroundColor: '#E94F35',
           borderColor: '#E94F35',
-          borderWidth: 3,
+          borderWidth: 2,
           tension: 0.3,
-          pointRadius: 0,
+          pointRadius: 2,
         },
       ],
     };
