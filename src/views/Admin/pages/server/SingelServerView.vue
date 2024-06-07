@@ -1,11 +1,12 @@
 <script>
 export default {
-  name: "CloudView"
+  name: "SingelServerView"
 }
 </script>
 
 <template>
-  <h1> Cloud </h1>
+  <div></div>
+
 </template>
 
 <style scoped>

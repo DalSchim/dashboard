@@ -4,11 +4,7 @@
     <router-link to="home">
       <div>
         <div class="logo">
-          <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M0 0L3.53118 7.95727H9.69586V22H22.2684L32 0H27.1999C23.2343 0 20.7857 1.55224 19.4629 5.15424L15.9696 14.6754L10.6143 0H0Z"
-                fill="#E94F35"/>
-          </svg>
+          <img src="@/assets/Fichier%203.png" alt="">
         </div>
         <hr>
       </div>
@@ -16,7 +12,7 @@
     <nav>
       <ul>
         <router-link to="server">
-          <link-component icon="ion:server" linkName="Serveur SE4"/>
+          <link-component icon="ion:server" linkName="Satelite"/>
         </router-link>
         <router-link to="PVE">
           <link-component icon="material-symbols:school" linkName="PVE"/>
@@ -39,8 +35,11 @@
         <router-link to="testview">
           <link-component icon="mdi:gear" linkName="TestView"/>
         </router-link>
-        <router-link to="securité" >
+        <router-link to="securité">
           <link-component icon="carbon:security" linkName="Sécurité"/>
+        </router-link>
+        <router-link to="jobs">
+          <link-component icon="carbon:tools" linkName="Jobs"/>
         </router-link>
       </ul>
     </nav>
@@ -50,40 +49,43 @@
 </template>
 
 <script>
-import LinkComponent from "@/components/LinkComponent.vue";
-import MenuBurger from "@/components/MenuBurger.vue";
-import router from "@/router";
+import LinkComponent from "@/components/navigation/LinkComponent.vue";
+import MenuBurger from "@/components/navigation/MenuBurger.vue";
 import DisconectView from "@/components/DisconectView.vue";
 
 export default {
   name: "NewNav",
   components: {DisconectView, MenuBurger, LinkComponent},
-
-
   data() {
     return {
-      isVisible: (window.innerWidth > 910) == true,
+      isVisible: false,
+    };
+  },
+  // au chargement de la page on vérifie si la taille de l'écran est inférieure à 910px pour afficher le menu burger
+  mounted() {
+    if (window.innerWidth < 910) {
+      this.isVisible = false;
+    } else {
+      this.isVisible = true;
     }
-  },
-  methods: {
-    handleToggleMenu(isActive) {
-      this.isVisible = !this.isVisible;
-      if (!isActive || !this.isVisible) {
-        this.$refs.menuBurger.resetIcone();
-      }
-    },
-
-  },
-  created() {
-    router.beforeEach((to, from, next) => {
+    // on écoute le redimensionnement de la fenêtre pour afficher ou cacher le menu
+    window.addEventListener('resize', () => {
       if (window.innerWidth < 910) {
         this.isVisible = false;
+      } else {
+        this.isVisible = true;
       }
-      this.$refs.menuBurger.resetIcone();
-      next();
-    })
+    });
+
   },
+  methods: {
+    // fonction pour afficher ou cacher le menu
+    handleToggleMenu(isActive) {
+      this.isVisible = isActive;
+    },
+  }
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -104,7 +106,9 @@ a {
 }
 
 .nav {
-  position: relative;
+  position: fixed;
+  z-index: 999;
+  width: 82px;
   align-items: center;
   justify-content: space-between;
   display: flex;

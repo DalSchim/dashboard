@@ -12,6 +12,12 @@ export default {
       <div class="choixetablisement">
         <form>
           <v-select v-model="selectionEtablissement" :options="options"></v-select>
+          <v-select
+              :items="iteams"
+              label="choic win"
+          >
+
+          </v-select>
           <button @click.prevent="validerFormulaire">Valider</button>
         </form>
       </div>

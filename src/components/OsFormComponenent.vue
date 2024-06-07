@@ -1,29 +1,53 @@
 <template>
   <form class="chois-os">
     <div class="d-flex pa-4">
-      <v-checkbox-btn
-          v-model="enabled"
-          class="pe-2"
-          color="#E94F35"
-          base-color="#E94F35"
-      ></v-checkbox-btn>
-      <v-text-field
-          :disabled="!enabled"
-          hide-details
-          label="I only work if you check the box"
-      ></v-text-field>
+       <v-checkbox
+          v-model="cheak"
+          class="checkbox"
+       />
+      <v-select
+        v-model="selected"
+        :items="items"
+        label="choisir un os"
+        class="v-selecte"
+        :disabled="cheak"
+      >
+      </v-select>
     </div>
+    <div class="d-flex pa-4">
+      <v-checkbox
+        v-model="cheak"
+        id="cheak"
+        class="checkbox"
+        @click="cheakBox"
+      />
+      <v-select
+        v-model="selected"
+        :items="items"
+        label="choisir un os"
+        class="v-selecte"
+        :disabled="cheak"
+      />
+    </div>
+
   </form>
 </template>
 
 <script>
-  export default {
-    name: "OsFormComponenent",
-    data: () => ({
-      includeFiles: true,
-      enabled: false,
-    }),
-  };
+export default {
+  data() {
+    return {
+      selected: null,
+      items: ["Windows", "Linux", "MacOS"],
+      cheak: true,
+    };
+  },
+  methods: {
+    cheakBox() {
+      this.cheak = !this.cheak;
+    },
+  },
+};
 </script>
 
 <style scoped lang="scss">
@@ -33,7 +57,6 @@
   justify-content: center;
   margin-top: 20px;
   .v-selecte {
-    width: 30%;
   }
 }
 

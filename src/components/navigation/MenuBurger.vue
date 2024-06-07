@@ -6,6 +6,14 @@ export default {
       isActive: false,
     };
   },
+  mounted() {
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 910) {
+        this.resetIcone();
+      }
+    });
+  },
+
   methods: {
     toggleMenu() {
       this.isActive = !this.isActive;
@@ -45,8 +53,8 @@ export default {
       display: block;
       cursor: pointer;
       position: absolute;
-      top: 11px;
-      left: 11px;
+      top: 16px;
+      left: 16px;
       z-index: 9999999;
     }
   }
@@ -61,15 +69,15 @@ export default {
   }
 
   .line.active {
-    top: 8px;
-    left: 0px;
+    top: 24px;
+    left: 16px;
     position: fixed;
     transform: rotate(-45deg);
   }
 
   .line2.active {
-    top: 8px;
-    left: 0px;
+    top: 24px;
+    left: 16px;
     position: fixed;
     transform: rotate(45deg);
   }

@@ -1,18 +1,28 @@
 <template>
-  <div>
-    <form action="">
-      <label for="etablissement">Établissement</label>
-      <v-select v-model="selectionEtablissement" :options="options"></v-select>
+  <!--formulaire d'accée a distance des pc des établisemnt selon les salle champ : etablisemnent / sall / pc -->
+  <v-form>
+    <v-container>
 
-      <label for="salle">Salle</label>
-      <v-select v-model="selectionSalle" :options="options"></v-select>
-
-      <label for="poste">Poste</label>
-      <v-select v-model="selectionPoste" :options="options"></v-select>
-
-      <button @click.prevent="validerFormulaire">Valider</button>
-    </form>
-  </div>
+      <v-select
+        v-model="select"
+        :items="items"
+        label="Etablissement"
+        required
+      ></v-select>
+      <v-select
+        v-model="select"
+        :items="items"
+        label="Salle"
+        required
+      ></v-select>
+      <v-select
+        v-model="select"
+        :items="items"
+        label="PC"
+        required
+      ></v-select>
+    </v-container>
+  </v-form>
 </template>
 
 <script>
@@ -20,6 +30,26 @@
 
 export default {
   name: 'FormulaireAccerdistance',
+data() {
+    return {
+      select: null,
+    };
+  },
+  methods: {
+    // Ajoutez vos méthodes spécifiques au composant ici si nécessaire
+  },
+
+  mounted() {
+    // Ajoutez vos actions à exécuter lors de la création du composant ici si nécessaire
+  },
+
+  computed: {
+    // Ajoutez vos propriétés calculées spécifiques au composant ici si nécessaire
+  },
+
+  watch: {
+    // Ajoutez vos observateurs spécifiques au composant ici si nécessaire
+  },
 
 };
 </script>

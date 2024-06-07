@@ -11,6 +11,9 @@ export default {
   name: 'ActionView',
   data: () => ({
     tab: null,
+    length:2,
+    search: '',
+    items: ['Alumage/Extinction', 'Font d’écrans', 'Deploiment os', 'Mise à jour', 'Instalation d\'aplication'],
   }),
   components: {
     AplicationView,
@@ -23,26 +26,28 @@ export default {
 </script>
 
 <template>
-  <v-card>
+  <v-card class="mx-auto" width="100%">
     <v-tabs
         v-model="tab"
         color="#E94F35"
+        show-arrows
+        slider-color="#E94F35"
+        grow
     >
-      <v-tab value="one">Alumage/Extinction</v-tab>
-      <v-tab value="two">Font d’écrans</v-tab>
-      <v-tab value="three">Deploiment os</v-tab>
-      <v-tab value="fore">Mise à jour</v-tab>
-      <v-tab  value="five">instalation d'aplication</v-tab>
-
+      <v-tab
+          v-for="(item, i) in items"
+          :key="i">
+        {{ item }}
+      </v-tab>
     </v-tabs>
 
     <v-card-text>
       <v-window v-model="tab">
-        <v-window-item value="one">
+        <v-window-item value="Alumage/Extinction">
           One
         </v-window-item>
 
-        <v-window-item value="two">
+        <v-window-item value="Font d’écrans">
           <div class="container">
 
             <div class="form">
@@ -56,13 +61,13 @@ export default {
           </div>
         </v-window-item>
 
-        <v-window-item class="pa-2" value="three">
+        <v-window-item class="pa-2" value="Deploiment os">
           <deploimentos-view/>
         </v-window-item>
-        <v-window-item value="fore">
+        <v-window-item value="Mise à jour">
           fore
         </v-window-item>
-        <v-window-item value="five">
+        <v-window-item value="Instalation d'aplication">
           <aplication-view/>
         </v-window-item>
       </v-window>
@@ -97,20 +102,5 @@ export default {
   grid-area: galeri;
 }
 
-@media screen and (max-width: 910px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1.1fr;
-    gap: 16px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "tabs"
-      "form"
-      "galeri";
-    width: 100%;
-    height: 100vh;
-  }
-}
 
 </style>

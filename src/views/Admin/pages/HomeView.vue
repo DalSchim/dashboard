@@ -4,126 +4,172 @@
       <MapComp/>
     </div>
     <div class="zone-info">
-      <div class="box">
+      <div class="grid-litel-icone">
         <nulber-server></nulber-server>
+        <computer-component item-name="Nombre-d'ordinateur" item-endpoint="computer" icon="mdi:desktop-classic"/>
+        <computer-component item-endpoint="printer" item-name="Imprimante" icon="mdi:printer"/>
+        <computer-component item-endpoint="monitor" item-name="Moniteur" icon="mdi:desktop-classic"/>
+        <computer-component item-endpoint="software" item-name="Logiciel" icon="mdi:application"/>
+        <computer-component item-endpoint="networkequipment" item-name="Réseau" icon="mdi:router-wireless"/>
+        <computer-component item-endpoint="phone" item-name="Telephone" icon="mdi:cellphone"/>
       </div>
-      <div class="box">
-        <UtilisateurComponent/>
+    </div>
+    <div class="zone-circle">
+      <div class="chart-conataineur">
+        <div>
+          <chart-computer-by-marck/>
+        </div>
       </div>
-      <div class="box">
-        <RamComponent/>
+      <div class="chart-conataineur">
+        <div>
+          <chart-monitor-by-marck/>
+        </div>
       </div>
-      <div class="chart">
-        <ChartCpu/>
+    </div>
+    <div class="zone-chart">
+      <div class="cpu-chart">
+        <CpuChart/>
+      </div>
+      <div class="ram-chart">
+        <ram-chart/>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
-.gray-backgound {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 80%;
-  background: #f1f1f1;
-  opacity: 0.5;
-  z-index: -1;
-}
-
-.leaflet-control-attribution {
-  display: none;
-}
-
-.leaflet-container {
-  z-index: 12;
-}
-
-.zone-map {
-  padding: 16px;
-  border-radius: 12px;
-}
-
-.zone-info {
-  display: flex;
-  overflow-y: scroll;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  padding: 16px;
-  gap: 32px;
-}
-
-.chart {
-  width: 100%;
-  border-radius: 8px;
-  background: #FAFAFA;
-  box-shadow: -4px -1px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 8px;
-}
-
-
-.box {
-  width: 100%;
-  height: 90px;
-  border-radius: 8px;
-  background: #FAFAFA;
-  box-shadow: -4px -1px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 8px;
-
-}
-
 .container {
-  width: 100%;
-  height: 100vh;
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
+  grid-template-columns:repeat(2, 1fr);
+  padding: 16px;
+  width: 100%;
   grid-template-areas:
-    "zone-info zone-map zone-map"
-}
+    "zone-map zone-info"
+    "zone-circle zone-circle"
+    "zone-chart zone-chart";
 
+  .zone-map {
+    grid-area: zone-map;
+    width: 100%;
+    height: 50vh;
+  }
 
-.zone-map {
-  grid-area: zone-map;
-}
+  .zone-circle {
+    grid-area: zone-circle;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding-top: 16px;
+    .chart-conataineur {
+      height: 350px ;
+      background: white;
+      border-radius: 50px;
+      padding: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 
-.zone-info {
-  grid-area: zone-info;
+  .zone-chart {
+    grid-area: zone-chart;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "cpu-chart ram-chart";
+    gap: 20px;
+  }
+
+  .zone-info {
+    grid-area: zone-info;
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+
+    .grid-litel-icone {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 910px) {
   .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "zone-map zone-map"
-      "zone-map zone-map"
-      "zone-info zone-info";
+   display: flex;
+    flex-direction: column;
+    gap: 20px;
 
+    .zone-chart {
+     display: flex;
+      flex-direction: column;
+    }
+
+    .zone-map {
+      height: 50vh;
+    }
+
+    .zone-info {
+      overflow: scroll;
+      width: 100%;
+      height: 100%;
+    }
+
+    .zone-circle {
+      display: flex;
+      justify-content: space-evenly;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      .chart-conataineur {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f8f8f8;
+        border-radius: 50px;
+        width: fit-content;
+        height: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 8px;
+
+        div {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 }
-
-
 </style>
 
 <script>
-
-
-import ChartCpu from "@/components/ChartCpu.vue";
 import MapComp from "@/components/MapComp.vue";
-import RamComponent from "@/components/RamComponent.vue";
-import UtilisateurComponent from "@/components/UtilisateurComponent.vue";
-import NulberServer from "@/components/NulberServer.vue";
+import NulberServer from "@/components/Informationcomponent/NulberServer.vue";
+import ComputerComponent from "@/components/Informationcomponent/ComputerComponent.vue";
+import ChartComputerByMarck from "@/components/Informationcomponent/ChartComputerByMarck.vue";
+import ChartMonitorByMarck from "@/components/Informationcomponent/ChartMonitor.vue";
+import CpuChart from "@/components/mettric/CpuChart.vue";
+import RamChart from "@/components/mettric/RamChart.vue";
 
 export default {
   name: 'HomeView',
-  components: {NulberServer, UtilisateurComponent, RamComponent, MapComp, ChartCpu},
-
-
+  components: {
+    RamChart,
+    CpuChart,
+    ChartMonitorByMarck,
+    ChartComputerByMarck,
+    ComputerComponent,
+    NulberServer,
+    MapComp,
+  },
 }
 </script>

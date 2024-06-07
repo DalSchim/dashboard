@@ -1,5 +1,5 @@
 <script>
-import NewNav from "@/components/NewNav.vue";
+import NewNav from "@/components/navigation/NewNav.vue";
 
 export default {
   name: "DashBoard",
@@ -10,20 +10,41 @@ export default {
 <template>
   <div class="wrapeur">
     <new-nav/>
-    <router-view/>
+    <div class="container-app">
+      <transition name="fade" >
+        <router-view/>
+      </transition>
+    </div>
     <div class="gray-backgound"></div>
   </div>
 </template>
 
 <style scoped>
-cursor{
+cursor {
   display: flex;
+}
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+
+
+.container-app {
+  width: 100%;
+  padding-left: 82px;
+  @media screen and (max-width: 910px) {
+    padding-left: 0px;
+    padding-top: 64px;
+  }
 }
 
 .wrapeur {
-  display: grid;
-  grid-template-columns: 0.02fr 1fr;
+  display: flex;
 }
 
 .gray-backgound {
@@ -35,12 +56,6 @@ cursor{
   bottom: 0;
 }
 
-@media screen and (max-width: 910px) {
-  .wrapeur {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
 
-}
 
 </style>

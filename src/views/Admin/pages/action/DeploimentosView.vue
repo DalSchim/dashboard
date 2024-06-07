@@ -4,7 +4,6 @@ import OsFormComponenent from "@/components/OsFormComponenent.vue";
 export default {
   name: "DeploimentosView",
   components: {OsFormComponenent}
-
 }
 
 </script>

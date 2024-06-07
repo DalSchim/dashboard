@@ -1,81 +1,73 @@
-<script>
+<template>
+  <div ref="map" style="height: 400px;"></div>
+</template>
 
-import 'leaflet/dist/leaflet.css';
+<script>
 import L from 'leaflet';
-/*import axios from "axios";*/
-import monGeoJSON from "../assets/data/geojsontest.json";
+import axios from "axios";
 
 export default {
-  name: 'MapComp',
   data() {
     return {
-      dataFromPhp: null,
+      sourceData: [], // Stockage des données récupérées
+      icons: {
+        green: L.icon({
+          iconUrl: require('@/assets/marker-icon.png'),
+          iconSize: [32, 32],
+        }),
+        red: L.icon({
+          iconUrl: require('@/assets/marker-icon-icon.png'),
+          iconSize: [32, 32],
+        }),
+        grey: L.icon({
+          iconUrl: require('@/assets/marker-icon-grey.png'),
+          iconSize: [32, 32],
+        })
+      }
     };
   },
   mounted() {
-    this.map = L.map('map').setView([48.92463703019094 , 2.055805191580724], 13);
+    this.map = L.map(this.$refs.map).setView([48.9283964, 2.2147149], 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
 
-    // Ajoutez le GeoJSON à la carte avec une icone qui ce trouve dans le dossier assets
-    L.geoJSON(monGeoJSON, {
-      pointToLayer: function (feature, latlng) {
-        if (feature.properties.etat === "inactif") {
-          return L.marker(latlng, {
-            icon: L.icon({
-              iconUrl: require('../assets/placeholder.png'),
-              iconSize: [32, 32],
-              iconAnchor: [12, 41],
-              popupAnchor: [1, -34],
-              shadowSize: [41, 41]
-            })
-          });
-        }else {
-        return L.marker(latlng, {
-          icon: L.icon({
-            iconUrl: require('../assets/marker-icon.png'),
-            iconSize: [32, 32],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-          })
+    this.fetchData(); // Appel de la méthode fetchData lors du montage du composant
+  },
+  methods: {
+    async fetchData() {
+      try {
+        const response = await axios.get('https://central.moncollege95.fr/api2/directory/etabs');
+        this.sourceData = response.data;
+
+        // Convertir les données et afficher les marqueurs sur la carte
+        this.sourceData.forEach(item => {
+          const {description, fullname, textencodedoraddress, cn, state} = item;
+          const coordinates =  [textencodedoraddress && parseFloat(textencodedoraddress.split(',')[0]), textencodedoraddress && parseFloat(textencodedoraddress.split(',')[1])];
+          if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+            L.marker(coordinates, { icon: this.checkStatus(state) })
+                .addTo(this.map)
+                .bindPopup(`<b>${fullname}</b> <span>(${cn})</span><br>${description}<br><a href="https://sambaedu.0952282p.moncollege95.fr/admin">Lien 1</a><br><a href="https://proxmox.0952282p.moncollege95.fr">Lien 2</a><br><b>${state}</b>`);
+          }
         });
-        }
-      },
-      onEachFeature: function (feature, layer) {
-        const popupContent = `
-      <b>${feature.properties.titre}(${feature.properties.uai})</b></br>
-      <a href="${feature.properties.url }">Interface SE4FS</a></br>
-      <a href="${feature.properties.url2}">Interface PVE</a><br>
-      <span>SE4FS :${feature.properties.ipfs}</span><br>
-      <span>SE4AD :${feature.properties.ipad}</span><br>
-      <span>cpu load :</span><br>
-      <span>Dernière requête :</span>`;
-        layer.bindPopup(popupContent);
+
+      } catch (error) {
+        console.error('Erreur lors de la récupération des données:', error);
       }
-    }).addTo(this.map);
-
+    },
+    checkStatus(state) {
+      if (state === true) {
+        return this.icons.green;
+      } else if (state === false) {
+        return this.icons.red;
+      } else {
+        return this.icons.grey;
+      }
+    }
   }
-
-};
-
+}
 </script>
 
-<template>
-  <div id="map"></div>
-  <div>
-
-  </div>
-</template>
-
-<style scoped>
-
-#map {
-  height: 100%;
-  border-radius: 8px;
-}
-
-
-
+<style>
+/* Vous pouvez ajouter du style ici si nécessaire */
 </style>

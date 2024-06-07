@@ -18,5 +18,5 @@
 
 </style>
 <script setup>
-
+import 'leaflet/dist/leaflet.css';
 </script>

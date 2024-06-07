@@ -7,7 +7,6 @@
     </div>
   </div>
   <div class="icone">
-
   </div>
 </template>
 

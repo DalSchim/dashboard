@@ -9,10 +9,19 @@ export default {
       openprofil: false,
     }
   },
+
+
   methods: {
     profilopen() {
       this.openprofil = !this.openprofil;
+    },
+    // deconnecte et redirige vers la page de connexion et supprime le token en local storage
+
+    deconnecte() {
+      localStorage.removeItem('token');
+      this.$router.push('/login');
     }
+
   }
 }
 </script>
@@ -35,8 +44,7 @@ export default {
       <h2>Admin</h2>
       <hr>
       <div class="direction-flex">
-        <p>Ce déconecté</p>
-        <Icon color="white" icon="pepicons-pop:leave"/>
+        <p @click="deconnecte">Déconnexion</p>
       </div>
     </div>
   </div>
