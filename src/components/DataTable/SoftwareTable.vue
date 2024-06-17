@@ -15,6 +15,7 @@
     <v-data-table
         v-model="localSelected"
         :loading="loading"
+        :loading-text="loadingtext"
         :headers="headers"
         :items="filteredAPI"
         item-value="id"
@@ -47,6 +48,7 @@ export default {
       API: [],
       search: "",
       loading: true,
+      loadingtext: "Chargement des données...",
       localSelected: this.selected,
       headers: [
         { title: "ID", value: "id" , align: "start" ,key: 'id'},

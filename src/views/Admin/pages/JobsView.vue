@@ -76,6 +76,7 @@ export default {
           :total-items="totalPages"
           :loading="loading"
           :loading-text="loadingText"
+
       >
         <template v-slot:top>
           <v-toolbar flat>
