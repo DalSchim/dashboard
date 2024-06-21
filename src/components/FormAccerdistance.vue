@@ -2,7 +2,6 @@
   <!--formulaire d'accée a distance des pc des établisemnt selon les salle champ : etablisemnent / sall / pc -->
   <v-form>
     <v-container>
-
       <v-select
         v-model="select"
         :items="items"

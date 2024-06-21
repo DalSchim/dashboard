@@ -183,8 +183,6 @@ export default {
       const token = Math.random().toString(36).substr(2)
       return token
     },
-
-
   },
   data: () => ({
     Token: '',
@@ -206,8 +204,6 @@ export default {
           this.step = 3
         }, 2000)
       },
-      // si le formulaire est corect allor on ajoute option complete
-
     },
 
 
@@ -282,7 +278,6 @@ export default {
   .wraper-form {
     justify-content: start;
   }
-
 
 }
 </style>

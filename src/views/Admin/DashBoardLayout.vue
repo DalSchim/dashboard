@@ -32,8 +32,6 @@ cursor {
   opacity: 0;
 }
 
-
-
 .container-app {
   width: 100%;
   padding-left: 82px;
@@ -55,7 +53,5 @@ cursor {
   z-index: -1;
   bottom: 0;
 }
-
-
 
 </style>

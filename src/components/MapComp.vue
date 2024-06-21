@@ -3,11 +3,13 @@
 </template>
 
 <script>
+
 import L from 'leaflet';
 import axios from "axios";
 
 export default {
   data() {
+    // Initialisation des données
     return {
       sourceData: [], // Stockage des données récupérées
       icons: {
@@ -31,9 +33,9 @@ export default {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© OpenStreetMap contributors'
     }).addTo(this.map);
-
     this.fetchData(); // Appel de la méthode fetchData lors du montage du composant
   },
+  // Méthodes du composant pour récupérer les données et afficher les marqueurs sur la carte Leaflet
   methods: {
     async fetchData() {
       try {
@@ -43,9 +45,9 @@ export default {
         // Convertir les données et afficher les marqueurs sur la carte
         this.sourceData.forEach(item => {
           const {description, fullname, textencodedoraddress, cn, state} = item;
-          const coordinates =  [textencodedoraddress && parseFloat(textencodedoraddress.split(',')[0]), textencodedoraddress && parseFloat(textencodedoraddress.split(',')[1])];
+          const coordinates = [textencodedoraddress && parseFloat(textencodedoraddress.split(',')[0]), textencodedoraddress && parseFloat(textencodedoraddress.split(',')[1])];
           if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-            L.marker(coordinates, { icon: this.checkStatus(state) })
+            L.marker(coordinates, {icon: this.checkStatus(state)})
                 .addTo(this.map)
                 .bindPopup(`<b>${fullname}</b> <span>(${cn})</span><br>${description}<br><a href="https://sambaedu.0952282p.moncollege95.fr/admin">Lien 1</a><br><a href="https://proxmox.0952282p.moncollege95.fr">Lien 2</a><br><b>${state}</b>`);
           }
@@ -69,5 +71,4 @@ export default {
 </script>
 
 <style>
-/* Vous pouvez ajouter du style ici si nécessaire */
 </style>

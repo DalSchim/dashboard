@@ -7,6 +7,7 @@ export default {
   data() {
     return {
       openprofil: false,
+      name: 'Admin'
     }
   },
 
@@ -21,7 +22,6 @@ export default {
       localStorage.removeItem('token');
       this.$router.push('/login');
     }
-
   }
 }
 </script>
@@ -38,27 +38,27 @@ export default {
     </div>
 
     <div v-if="openprofil" class="disconnect-popup">
-      <div class="logo">
-        <img src="../assets/logo.png" alt="logo">
-      </div>
-      <h2>Admin</h2>
+      <v-avatar image="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" class="logo"
+                color="surface-variant" size="64"/>
+      <h2>{{ name }}</h2>
       <hr>
       <div class="direction-flex">
         <p @click="deconnecte">Déconnexion</p>
       </div>
     </div>
   </div>
-
-
 </template>
 
 <style scoped lang="scss">
 .profils {
+  padding-top: 24px;
+
   .bars {
     border: 1px solid #FFFFFF;
     border-radius: 900px;
     margin: 16px 0px;
   }
+
   .profil {
     &:hover {
       cursor: pointer;
@@ -71,25 +71,20 @@ export default {
   position: fixed;
   bottom: 16px;
   left: 90px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   display: flex;
   width: 170px;
-  padding: 10px;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
+  height: 170px;
+  border-radius: 10px;
   background: #2A3138;
 
   .logo {
     width: 70px;
     height: 70px;
     border-radius: 90px;
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-
+    justify-content: center;
   }
 
   h2 {
@@ -101,7 +96,7 @@ export default {
   }
 
   hr {
-    width: 100%;
+    width: 80%;
     border: 1px solid #FFFFFF;
     border-radius: 900px;
   }

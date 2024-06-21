@@ -1,28 +1,20 @@
 <script>
-
-
-import DropFile from "@/components/DropFile.vue";
-import ImageGalery from "@/components/ImageGalery.vue";
-import DeploimentosView from "@/views/Admin/pages/action/DeploimentosView.vue";
+import DeploimentosView from "@/views/Admin/pages/action/DeploimentOsView.vue";
 import AplicationView from "@/views/Admin/pages/action/AplicationView.vue";
-
 
 export default {
   name: 'ActionView',
   data: () => ({
     tab: null,
-    length:2,
+    length: 2,
     search: '',
     items: ['Alumage/Extinction', 'Font d’écrans', 'Deploiment os', 'Mise à jour', 'Instalation d\'aplication'],
   }),
   components: {
     AplicationView,
     DeploimentosView,
-    ImageGalery,
-    DropFile
   },
 }
-
 </script>
 
 <template>
@@ -40,27 +32,12 @@ export default {
         {{ item }}
       </v-tab>
     </v-tabs>
-
     <v-card-text>
       <v-window v-model="tab">
         <v-window-item value="Alumage/Extinction">
-          One
         </v-window-item>
-
         <v-window-item value="Font d’écrans">
-          <div class="container">
-
-            <div class="form">
-              <form action="">
-                <drop-file/>
-              </form>
-            </div>
-            <div class="galeri">
-              <image-galery/>
-            </div>
-          </div>
         </v-window-item>
-
         <v-window-item class="pa-2" value="Deploiment os">
           <deploimentos-view/>
         </v-window-item>
@@ -72,26 +49,14 @@ export default {
         </v-window-item>
       </v-window>
     </v-card-text>
-
   </v-card>
-
 </template>
 
 <style scoped>
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-auto-columns: 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "tabs tabs"
-    "form galeri";
-}
-
 .tabs {
-  grid-area: tabs;
+  display: grid;
+  grid-template-areas: "tabs";
+
 }
 
 .form {

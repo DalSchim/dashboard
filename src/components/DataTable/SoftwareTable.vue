@@ -1,4 +1,5 @@
 <template>
+  <!-- Tableau de données -->
   <v-toolbar>
     <v-toolbar-title>Software</v-toolbar-title>
     <v-spacer></v-spacer>

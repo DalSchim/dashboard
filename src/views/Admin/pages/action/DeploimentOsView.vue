@@ -8,12 +8,10 @@ export default {
 
 </script>
 <template>
-<h1> Deploimentos </h1>
+  <h1> Deploimentos </h1>
   <section class="">
     <div class="formulaire">
       <os-form-componenent/>
-    </div>
-    <div class="retour-information">
     </div>
 
   </section>

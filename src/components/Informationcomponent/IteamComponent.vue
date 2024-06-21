@@ -56,7 +56,6 @@ export default {
         console.error("Erreur lors de l'initialisation de la session :", error);
       }
     },
-
     async fetchItemData() {
       try {
         const response = await axios.get(`http://172.19.254.113/apirest.php/${this.itemEndpoint}/?range=0-999999`, {
