@@ -22,9 +22,7 @@ export default{
 </template>
 
 <style scoped lang="scss">
-
 /*si je pase ma sourie au dessue de mon a il s'agrandi est lesse apparaire le text*/
-
 .link{
   align-items: center;
   justify-content: center;
@@ -37,11 +35,9 @@ export default{
   color: #ffff;
   transition: width 0.5s;
   border-radius: 8px;
-  box-shadow: -4px -1px 4px 0px rgba(0, 0, 0, 0.25);
   span {
     display: none;
   }
-
 }
 .link:hover{
   left: 50%;
@@ -54,11 +50,7 @@ export default{
   span{
     display: block;
   }
-
-
 }
-
-
 @media screen and (max-width: 910px) {
   .link{
     left: 50%;
@@ -78,10 +70,7 @@ export default{
     span{
       display: block;
     }
-
   }
-
-
 }
 
 </style>

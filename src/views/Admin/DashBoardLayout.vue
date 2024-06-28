@@ -11,9 +11,7 @@ export default {
   <div class="wrapeur">
     <new-nav/>
     <div class="container-app">
-      <transition name="fade" >
         <router-view/>
-      </transition>
     </div>
     <div class="gray-backgound"></div>
   </div>
@@ -22,14 +20,6 @@ export default {
 <style scoped>
 cursor {
   display: flex;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
 }
 
 .container-app {

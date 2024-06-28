@@ -30,7 +30,7 @@
           Three
         </v-window-item>
         <v-window-item value="nouveau">
-          nouveau
+          <ActivEtab/>
         </v-window-item>
 
       </v-window>
@@ -40,34 +40,24 @@
 
 </template>
 
-<script>/*
-import ChartCpu from "@/components/ChartCpu.vue";
-import ChartRam from "@/components/ChartRam.vue";
-import ChartMemor from "@/components/ChartMemorie.vue";
-import ChartUtil from "@/components/Chartutil.vue";
-import UtilisateurComponent from "@/components/UtilisateurComponent.vue";
-import RamComponent from "@/components/RamComponent.vue";*/
+<script>
 import FormAccerdistance from "@/components/FormAccerdistance.vue";
 import DataTableComponent from "@/components/DataTable/HostTableComponent.vue";
+import ActivEtab from "@/views/Admin/pages/server/ActivEtab.vue";
 
 export default {
   name: 'AboutView',
   components: {
+    ActivEtab,
     DataTableComponent,
 
     FormAccerdistance,
-    /*RamComponent,
-    UtilisateurComponent,
-    ChartUtil,
-    ChartMemor,
-    ChartRam,
-    ChartCpu*/
+
   },
   data: () => ({
     tab: null,
     search: '',
     items: ['stat', 'accès', 'assistance', 'nouveau'],
-
   }),
 
 }

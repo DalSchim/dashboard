@@ -1,7 +1,7 @@
 <template>
   <menu-burger @toggle-menu="handleToggleMenu" ref="menuBurger"></menu-burger>
   <div class="nav" v-if="isVisible" id="app">
-    <router-link to="home">
+    <router-link to="/dashboard/home">
       <div>
         <div class="logo">
           <img src="@/assets/Fichier%203.png" alt="">
@@ -11,34 +11,34 @@
     </router-link>
     <nav>
       <ul>
-        <router-link to="server">
+        <router-link to="/dashboard/server">
           <link-component icon="ion:server" linkName="Satelite"/>
         </router-link>
-        <router-link to="PVE">
+        <router-link to="/dashboard/PVE">
           <link-component icon="material-symbols:school" linkName="PVE"/>
         </router-link>
-        <router-link to="etat">
+        <router-link to="/dashboard/etat">
           <link-component icon="material-symbols:link" linkName="État des liens"/>
         </router-link>
-        <router-link to="cloud">
+        <router-link to="/dashboard/cloud">
           <link-component icon="material-symbols:cloud" linkName="Cloud"/>
         </router-link>
-        <router-link to="action">
+        <router-link to="/dashboard/action">
           <link-component icon="carbon:flash-filled" linkName="Action en masse"/>
         </router-link>
-        <router-link to="annuaire">
+        <router-link to="/dashboard/annuaire">
           <link-component icon="fluent:calendar-agenda-28-filled" linkName="Annuaire"/>
         </router-link>
-        <router-link to="autorisation">
+        <router-link to="/dashboard/autorisation">
           <link-component icon="material-symbols:key" linkName="Autorisations"/>
         </router-link>
-        <router-link to="testview">
+        <router-link to="/dashboard/testview">
           <link-component icon="mdi:gear" linkName="TestView"/>
         </router-link>
-        <router-link to="securité">
+        <router-link to="/dashboard/securité">
           <link-component icon="carbon:security" linkName="Sécurité"/>
         </router-link>
-        <router-link to="jobs">
+        <router-link to="/dashboard/jobs">
           <link-component icon="carbon:tools" linkName="Jobs"/>
         </router-link>
       </ul>
@@ -137,7 +137,9 @@ a {
     position: absolute;
     top: 17%;
     left: 30%;
-
+    height: 70%;
+    overflow: scroll;
+    scrollbar-width: none;
     ul {
       display: flex;
       flex-direction: column;
@@ -154,7 +156,6 @@ a {
     backdrop-filter: blur(7px);
     background: #2A3138C2;
     width: 100%;
-
     nav {
       position: static;
     }

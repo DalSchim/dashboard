@@ -26,14 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="zone-chart">
-      <div class="cpu-chart">
-        <CpuChart/>
-      </div>
-      <div class="ram-chart">
-        <ram-chart/>
-      </div>
-    </div>
+    <ram-chart cpu="0000000x" ram="dec95-ctrl-pbs00"/>
   </div>
 </template>
 
@@ -46,7 +39,10 @@
   grid-template-areas:
     "zone-map zone-info"
     "zone-circle zone-circle"
-    "zone-chart zone-chart";
+    "zone-chart zone-chart"
+  "host-metrics host-metrics";
+
+
   .zone-map {
     grid-area: zone-map;
     width: 100%;
@@ -60,12 +56,14 @@
     grid-template-rows: 1fr;
     gap: 20px;
     padding-top: 16px;
+
     .chart-conataineur {
-      height: 350px ;
+      height: 350px;
       background: white;
       border-radius: 50px;
       padding: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
       div {
         display: flex;
         justify-content: center;
@@ -104,12 +102,12 @@
 
 @media screen and (max-width: 910px) {
   .container {
-   display: flex;
+    display: flex;
     flex-direction: column;
     gap: 20px;
 
     .zone-chart {
-     display: flex;
+      display: flex;
       flex-direction: column;
     }
 
@@ -122,11 +120,13 @@
       width: 100%;
       height: 100%;
     }
+
     .zone-circle {
       display: flex;
       justify-content: space-evenly;
       gap: 20px;
       flex-wrap: wrap;
+
       .chart-conataineur {
         display: flex;
         justify-content: center;
@@ -137,6 +137,7 @@
         height: 100%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         padding: 8px;
+
         div {
           width: 100%;
           height: 100%;
@@ -153,14 +154,12 @@ import NulberServer from "@/components/Informationcomponent/NulberServer.vue";
 import ComputerComponent from "@/components/Informationcomponent/IteamComponent.vue";
 import ChartComputerByMarck from "@/components/Informationcomponent/ChartComputerByMarck.vue";
 import ChartMonitorByMarck from "@/components/Informationcomponent/ChartMonitor.vue";
-import CpuChart from "@/components/mettric/CpuChart.vue";
 import RamChart from "@/components/mettric/RamChart.vue";
 
 export default {
   name: 'HomeView',
   components: {
     RamChart,
-    CpuChart,
     ChartMonitorByMarck,
     ChartComputerByMarck,
     ComputerComponent,

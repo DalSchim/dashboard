@@ -1,14 +1,17 @@
-import {createRouter, createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 import Login from "@/views/auth/LoginView.vue";
 import NotView from "@/views/NotView.vue";
-import dashBoard from "@/views/Admin/DashBoardLayout.vue";
+import DashBoard from "@/views/Admin/DashBoardLayout.vue"; // Importez le composant MachineView
 
 const routes = [
     {
-        path: '/' & '/#/',
+        path: '/',
         redirect: '/login',
         children: [
-            {path: '/login', name: 'login', component: Login,
+            {
+                path: '/login',
+                name: 'login',
+                component: Login,
                 beforeEnter: (to, from, next) => {
                     const token = localStorage.getItem('token');
                     if (token) {
@@ -19,14 +22,12 @@ const routes = [
                 },
             },
         ],
-
     },
     {
-        // on verifie si l'utilisateur est connecté
         path: '/dashboard',
         name: 'Dashboard',
         redirect: 'dashboard/home',
-        component: dashBoard,
+        component: DashBoard,
         beforeEnter: (to, from, next) => {
             const token = localStorage.getItem('token');
             if (!token) {
@@ -66,34 +67,49 @@ const routes = [
                 name: 'annuaire',
                 component: () => import('@/views/Admin/pages/annuaire/AnnuaireView.vue')
             },
-            {path: 'cloud', name: 'profil', component: () => import('@/views/Admin/pages/CloudView.vue')},
+            {
+                path: 'cloud',
+                name: 'profil',
+                component: () => import('@/views/Admin/pages/CloudView.vue')
+            },
             {
                 path: 'autorisation',
                 name: 'autorisation',
                 component: () => import('@/views/Admin/pages/autorisation/AutorView.vue')
             },
-            {path: 'testview', name: 'testview', component: () => import('@/views/Admin/pages/TestView.vue')},
+            {
+                path: 'testview',
+                name: 'testview',
+                component: () => import('@/views/Admin/pages/TestView.vue')
+            },
             {
                 path: 'securité',
                 name: 'securité',
                 component: () => import('@/views/Admin/pages/securite/SecuriteView.vue')
             },
             {
-                path: 'jobs', name: 'jobs', component: () => import('@/views/Admin/pages/JobsView.vue')
+                path: 'jobs',
+                name: 'jobs',
+                component: () => import('@/views/Admin/pages/JobsView.vue')
             },
-            // single page server
+            {
+                path: 'machine/:etab/:cn', // Route pour la vue Machine avec un paramètre dynamique
+                name: 'MachineView',
+                component: () => import('@/views/Admin/pages/MachineView.vue'), // Importez le composant MachineView
+                props: true
+            },
         ],
-        meta: {requiresAuth: true},
+        meta: { requiresAuth: true },
     },
     {
         path: '/:pathMatch(.*)*',
         component: NotView,
     },
-]
-
+];
 
 const router = createRouter({
     history: createWebHistory(),
     routes
-})
-export default router
+});
+
+export default router;

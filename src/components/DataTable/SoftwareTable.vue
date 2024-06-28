@@ -99,6 +99,7 @@ export default {
         this.loading = false;
       }
     },
+
     async fetchManufacturerName(url) {
       try {
         const response = await axios.get(url, {
@@ -114,6 +115,8 @@ export default {
         return 'N/A';
       }
     },
+
+    
     async fetchItemData() {
       try {
         const response = await axios.get(`http://172.19.254.113/apirest.php/software/?range=0-999999`, {
